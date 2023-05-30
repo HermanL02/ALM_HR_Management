@@ -1,0 +1,6 @@
+.paper{border:1px solid #dedede; margin: 10px; height:160px }
+.image{border:1px solid #dedede; margin: 10px; height:160px }
+.signBtn{display: flex; margin-top:20px;}
+.signTitle{ text-align: center; font-size:1.2em;margin:10px auto;}
+.handWriting{width:100%}
+.image image{width:100%; height:160px }

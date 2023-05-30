@@ -1,0 +1,43 @@
+<!-- archiveNew.wxml -->
+<view class="container">
+  <form bindsubmit="submitForm">
+    <view class='box' bindtap='uploadHeadImg'>上传</view>
+    <view class="input-group">
+      <label>姓名：</label>
+      <input type="text" name="name" placeholder="请输入姓名"/>
+    </view>
+    <view class="input-group">
+      <label>性别：</label>
+      <input type="text" name="gender" placeholder="请输入性别"/>
+    </view>
+    <view class="input-group">
+      <label>出生年月：</label>
+      <input type="date" name="birthdate" placeholder="请输入出生年月"/>
+    </view>
+    <view class="input-group">
+      <label>民族：</label>
+      <input type="text" name="ethnicity" placeholder="请输入民族"/>
+    </view>
+    <view class="input-group">
+      <label>身高：</label>
+      <input type="number" name="height" placeholder="请输入身高"/>
+    </view>
+
+
+    <view class="sign">
+  <view class="paper">
+    <canvas class="handWriting" disable-scroll="true" bindtouchstart="touchstart1" bindtouchmove="touchmove1"  canvas-id="handWriting1">
+    </canvas>
+  </view>
+  <view class="signBtn">
+    <button size="" type="primary" bindtap="sign1ok">完成签字</button> 
+    <button size="" type="warn" bindtap="reSign1">重新签字</button>
+  </view>
+</view>
+<view class="image" hidden="{{src?false:true}}">
+<image src="{{src}}" ></image>
+</view>
+
+    <button type="primary" formType="submit">提交</button>
+  </form>
+</view>

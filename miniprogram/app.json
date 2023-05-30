@@ -1,0 +1,30 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/profile/profile",
+    "pages/archiveNew/archiveNew",
+    "pages/editDocument/editDocument"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "爱乐盟人才库",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "档案公开"
+    }, {
+      "pagePath": "pages/archiveNew/archiveNew",
+      "text": "档案新建"
+    }, {
+      "pagePath": "pages/editDocument/editDocument",
+      "text": "档案修改"
+    }, {
+      "pagePath": "pages/profile/profile",
+      "text": "鉴权中心"
+    }]
+  }
+}

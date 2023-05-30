@@ -1,0 +1,3 @@
+<!--pages/profile/profile.wxml-->
+<text>pages/profile/profile.wxml</text>
+<view>Open ID: {{openid}}</view>
