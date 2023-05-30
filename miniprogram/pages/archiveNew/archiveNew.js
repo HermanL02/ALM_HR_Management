@@ -7,7 +7,7 @@ Page({
       name:'addArchive',
       data:{
         name: formData.name,
-        birthdate: formData.birthdate,
+        birthdate: this.data.birthdate,
         openid:wx.getUserInfo().openid,
       }
     })
@@ -16,7 +16,20 @@ Page({
       context1: null,
       hasDraw:false, //默认没有画
       src:null,
-      avatar:''
+      avatar:'',
+      genderArray: ['男', '女'],
+      genderIndex: 0,
+      birthdate: '请选择日期',
+    },
+    bindBirthChange: function(e) {
+      this.setData({
+        birthdate: e.detail.value
+      });
+    },
+    genderChange(e) {
+      this.setData({
+        genderIndex: e.detail.value,
+      });
     },
     onLoad: function() {
       var context1 = wx.createCanvasContext('handWriting1');

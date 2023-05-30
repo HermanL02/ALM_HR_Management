@@ -8,12 +8,19 @@
     </view>
     <view class="input-group">
       <label>性别：</label>
-      <input type="text" name="gender" placeholder="请输入性别"/>
+      <view>
+        <picker mode="selector" range="{{genderArray}}" bindchange="genderChange">
+          <view class="picker">{{genderArray[genderIndex]}}</view>
+        </picker>
+      </view>
     </view>
     <view class="input-group">
-      <label>出生年月：</label>
-      <input type="date" name="birthdate" placeholder="请输入出生年月"/>
-    </view>
+  <label>出生年月：</label>
+  <picker mode="date" bindchange="bindBirthChange">
+    <view class="picker">{{birthdate}}</view>
+  </picker>
+</view>
+
     <view class="input-group">
       <label>民族：</label>
       <input type="text" name="ethnicity" placeholder="请输入民族"/>
@@ -40,4 +47,5 @@
 
     <button type="primary" formType="submit">提交</button>
   </form>
+  <modal hidden="{{!isSubmitted}}" title="提示" content="提交成功!" confirmText="确定" bindconfirm="clearForm"></modal>
 </view>

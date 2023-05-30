@@ -7,11 +7,16 @@ Page({
     this.fetchUsers();
   },
 
+  onshow: function(){
+    this.onLoad();
+  },
+
   fetchUsers: function() {
     let that = this;
     wx.cloud.callFunction({
       name: 'getArchive',
       success: function(res) {
+        console.log(res.result.data);
         that.setData({
           employees: res.result.data
         });
