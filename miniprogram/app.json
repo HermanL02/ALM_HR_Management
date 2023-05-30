@@ -1,9 +1,9 @@
 {
   "pages":[
-    "pages/index/index",
     "pages/profile/profile",
     "pages/archiveNew/archiveNew",
-    "pages/editDocument/editDocument"
+    "pages/editDocument/editDocument",
+    "pages/archivePublic/archivePublic"
     
   ],
   "window":{
@@ -14,7 +14,7 @@
   },
   "tabBar": {
     "list": [{
-      "pagePath": "pages/index/index",
+      "pagePath": "pages/archivePublic/archivePublic",
       "text": "档案公开"
     }, {
       "pagePath": "pages/archiveNew/archiveNew",

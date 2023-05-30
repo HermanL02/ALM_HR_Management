@@ -1,0 +1,6 @@
+<!-- archivePublic.wxml -->
+<view class="container">
+  <view class="list" wx:for="{{users}}" wx:key="name">
+    <text>{{item.name}} - {{item.birthdate}}</text>
+  </view>
+</view>

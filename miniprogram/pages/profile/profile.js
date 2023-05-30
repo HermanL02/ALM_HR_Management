@@ -6,8 +6,7 @@ Page({
    */
   data: {
       openid:'',
-      isAdmin:false,
-      isSuperAdmin:false,
+      role:'',
   }, 
 
   /**
@@ -19,14 +18,22 @@ Page({
       name: 'login',
       complete: res => {
         console.log('callFunction test result: ', res);
+        let role = that.getRole();
         that.setData({
-          openid: res.result.OPENID
+          openid: res.result.OPENID,
+          role:role
         });
+        
       }
      
     });
   },
-
+  // Todo: 需要设置getRole
+  getRole: function() {
+    console.log("鉴权中...");
+      return '用户';
+    
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */

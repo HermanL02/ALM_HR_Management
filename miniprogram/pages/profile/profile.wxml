@@ -1,3 +1,4 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
-<view>Open ID: {{openid}}</view>
+
+<view>微信统一Open ID: {{openid}}</view>
+<view>鉴权: {{role}}</view>
