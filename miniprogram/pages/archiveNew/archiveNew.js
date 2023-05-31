@@ -7,7 +7,7 @@ Page({
       name:'addArchive',
       data:{
         name: formData.name,
-        genderIndex: genderIndex,
+        genderIndex: this.data.genderIndex,
         birthdate: this.data.birthdate,
         ethnicity: formData.ethnicity,
         height:formData.height,
