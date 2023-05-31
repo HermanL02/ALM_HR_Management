@@ -2,10 +2,13 @@
   "pages":[
     "pages/profile/profile",
     "pages/archiveNew/archiveNew",
-    "pages/editDocument/editDocument",
     "pages/archivePublic/archivePublic"
     
   ],
+  "useExtendedLib": {
+    "kbone": true,
+    "weui": true
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
@@ -19,9 +22,6 @@
     }, {
       "pagePath": "pages/archiveNew/archiveNew",
       "text": "档案新建"
-    }, {
-      "pagePath": "pages/editDocument/editDocument",
-      "text": "档案修改"
     }, {
       "pagePath": "pages/profile/profile",
       "text": "鉴权中心"

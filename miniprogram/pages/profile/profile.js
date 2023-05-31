@@ -21,13 +21,31 @@ Page({
         let role = that.getRole();
         that.setData({
           openid: res.result.OPENID,
-          role:role
+          role: res.result.ROLE,
         });
         
       }
      
     });
   },
+  copyOpenId: function () {
+    wx.setClipboardData({
+        data: this.data.openid,
+        success (res) {
+            wx.getClipboardData({
+                success (res) {
+                    console.log(res.data) // data
+                    wx.showToast({
+                        title: '已复制',
+                        icon: 'success',
+                        duration: 2000
+                    })
+                }
+            })
+        }
+    })
+},
+
   // Todo: 需要设置getRole
   getRole: function() {
     console.log("鉴权中...");

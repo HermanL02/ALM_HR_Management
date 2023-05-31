@@ -4,3 +4,9 @@
 .signTitle{ text-align: center; font-size:1.2em;margin:10px auto;}
 .handWriting{width:100%}
 .image image{width:100%; height:160px }
+
+
+.declaration-label {
+  font-size: 12px;  /* Adjust the font size as needed */
+  word-wrap: break-word;  /* Break words to prevent overflow */
+}

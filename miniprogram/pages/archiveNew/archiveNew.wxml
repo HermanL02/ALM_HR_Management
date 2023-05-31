@@ -1,37 +1,682 @@
 <!-- archiveNew.wxml -->
 <view class="container">
   <form bindsubmit="submitForm">
-    <view class='box' bindtap='uploadHeadImg'>上传</view>
+    <view class="weui-cells__title">上传头像</view>
+<view class="weui-cells weui-cells_form">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <view class="weui-uploader">
+        <view class="weui-uploader__hd">
+          <view class="weui-uploader__input-box" bindtap='uploadHeadImg'>
+            <view class="weui-uploader__input"></view>
+          </view>
+        </view>
+        <view class="weui-uploader__bd">
+          <image class="weui-uploader__file" src="{{imgUrl}}" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+    <view class='weui-cell'>
+            <view class='weui-cell__hd'>
+                <label class='weui-label'>姓名：</label>
+            </view>
+            <view class='weui-cell__bd'>
+                <input class='weui-input' type="text" name="name" placeholder="请输入姓名"/>
+            </view>
+    </view>
+    <view class='weui-cell'>
+            <view class='weui-cell__hd'>
+                <label class='weui-label'>性别：</label>
+            </view>
+            <view class='weui-cell__bd'>
+                <picker mode="selector" range="{{genderArray}}" bindchange="genderChange">
+                    <view class="picker">{{genderArray[genderIndex]}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">出生年月：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <picker mode="date" bindchange="bindBirthChange">
+        <view class="picker">{{birthdate}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">民族：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="ethnicity" placeholder="请输入民族"/>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">身高：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="number" name="height" placeholder="请输入身高"/>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">体重：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="number" name="weight" placeholder="请输入体重"/>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">政治面貌：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="politicalStatus" placeholder="请输入政治面貌"/>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">血型：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="bloodType" placeholder="请输入血型"/>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">职称及注册：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="professionalTitle" placeholder="请输入职称及注册"/>
+    </view>
+  </view>
+
+    
+    <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">证件类型：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <picker mode="selector" range="{{IDtypes}}" bindchange="handlePickerChange" name="IDtype">
+        <view class="picker">{{currentIDtype}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">户籍性质：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <picker mode="selector" range="{{householdNatures}}" bindchange="handleHouseholdNatureChange" name="householdNature">
+        <view class="picker">{{currentHouseholdNature}}</view>
+      </picker>
+    </view>
+  </view>
+
+    <!-- Continuing from the previous fields -->
+    <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">证件号码：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="IDnumber" placeholder="请输入证件号码"/>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">毕业院校：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="graduatedFrom" placeholder="请输入毕业院校"/>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">所学专业：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="major" placeholder="请输入所学专业"/>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">学历：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="education" placeholder="请输入学历"/>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">希望待遇：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="desiredSalary" placeholder="请输入希望待遇"/>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">外语水平：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="foreignLanguageSkill" placeholder="请输入外语水平"/>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">计算机水平：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="computerSkill" placeholder="请输入计算机水平"/>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">特长爱好：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="hobbies" placeholder="请输入特长爱好"/>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">婚姻状况：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="maritalStatus" placeholder="请输入婚姻状况"/>
+    </view>
+  </view>
+
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">驾照：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="drivingLicense" placeholder="请输入驾照"/>
+    </view>
+  </view>
+  
+    <!-- 是否可熟练驾驶 -->
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">是否可熟练驾驶：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <picker mode="selector" range="{{canDrives}}" bindchange="handleCanDriveChange">
+        <view class="weui-input">{{currentCanDrive}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- 是否生育 -->
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">是否生育：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <picker mode="selector" range="{{hasChilds}}" bindchange="handleHasChildChange">
+        <view class="weui-input">{{currentHasChild}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- 子女状况 -->
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">子女状况：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" name="childStatus" placeholder="请输入子女状况"/>
+    </view>
+  </view>
+
+  <!-- 传染病史及重大疾病史记录 -->
+  <view class="weui-cell">
+    <view class="weui-cell__hd">
+      <label class="weui-label">传染病史及重大疾病史记录：</label>
+    </view>
+    <view class="weui-cell__bd">
+      <textarea class="weui-textarea" placeholder="请输入传染病史及重大疾病史记录" name="medicalHistory"></textarea>
+    </view>
+  </view>
+    <!-- Continuing from the previous fields -->
+    <!-- 家庭住址 -->
+<view class="weui-cell">
+  <view class="weui-cell__hd">
+    <label class="weui-label">家庭住址：</label>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" type="text" name="homeAddress" placeholder="请输入家庭住址"/>
+  </view>
+</view>
+
+<!-- 户口所在地 -->
+<view class="weui-cell">
+  <view class="weui-cell__hd">
+    <label class="weui-label">户口所在地：</label>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" type="text" name="residence" placeholder="请输入户口所在地"/>
+  </view>
+</view>
+
+<!-- 移动电话号码 -->
+<view class="weui-cell">
+  <view class="weui-cell__hd">
+    <label class="weui-label">移动电话号码：</label>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" type="text" name="mobilePhone" placeholder="请输入移动电话号码"/>
+  </view>
+</view>
+
+<!-- 紧急联系人 -->
+<view class="weui-cell">
+  <view class="weui-cell__hd">
+    <label class="weui-label">紧急联系人：</label>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" type="text" name="emergencyContact" placeholder="请输入紧急联系人"/>
+  </view>
+</view>
+
+<!-- 紧急联系人电话 -->
+<view class="weui-cell">
+  <view class="weui-cell__hd">
+    <label class="weui-label">紧急联系人电话：</label>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" type="text" name="emergencyContactPhone" placeholder="请输入紧急联系人电话"/>
+  </view>
+</view>
+
+<!-- 电子邮件 -->
+<view class="weui-cell">
+  <view class="weui-cell__hd">
+    <label class="weui-label">电子邮件：</label>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" type="text" name="email" placeholder="请输入电子邮件"/>
+  </view>
+</view>
+
+<!-- 是否支持外派 -->
+<view class="weui-cell">
+  <view class="weui-cell__hd">
+    <label class="weui-label">是否支持外派：</label>
+  </view>
+  <view class="weui-cell__bd">
+    <picker mode="selector" range="{{supportDeployments}}" bindchange="handleSupportDeploymentChange">
+      <view class="weui-input">{{currentSupportDeployment}}</view>
+    </picker>
+  </view>
+</view>
+
+
+<view class="weui-cell">
+  <view class="weui-cell__hd">
+    <label class="weui-label">通知录用后可到岗时间：</label>
+  </view>
+  <view class="weui-cell__bd">
+    <picker mode="selector" range="{{availabilities}}" bindchange="handleAvailabilityChange">
+    <view class="weui-input">{{currentAvailability}}</view>
+  </picker>
+</view>
+</view>
+
+    <!-- Family member 1 -->
     <view class="input-group">
-      <label>姓名：</label>
-      <input type="text" name="name" placeholder="请输入姓名"/>
+      <label>家庭成员1姓名：</label>
+      <input type="text" name="familyMember1Name" placeholder="请输入姓名"/>
     </view>
     <view class="input-group">
-      <label>性别：</label>
-      <view>
-        <picker mode="selector" range="{{genderArray}}" bindchange="genderChange">
-          <view class="picker">{{genderArray[genderIndex]}}</view>
+      <label>与家庭成员1关系：</label>
+      <input type="text" name="familyMember1Relation" placeholder="请输入关系"/>
+    </view>
+    <view class="input-group">
+      <label>家庭成员1生日：</label>
+      <input type="date" name="familyMember1Birthdate" placeholder="请输入生日"/>
+    </view>
+    <view class="input-group">
+      <label>家庭成员1工作单位：</label>
+      <input type="text" name="familyMember1Workplace" placeholder="请输入工作单位"/>
+    </view>
+    <view class="input-group">
+      <label>家庭成员1职务：</label>
+      <input type="text" name="familyMember1Position" placeholder="请输入职务"/>
+    </view>
+    <view class="input-group">
+      <label>家庭成员1电话：</label>
+      <input type="text" name="familyMember1Phone" placeholder="请输入电话"/>
+    </view>
+<!-- Family member 2 -->
+<view class="input-group">
+      <label>家庭成员2姓名：</label>
+      <input type="text" name="familyMember2Name" placeholder="请输入姓名"/>
+    </view>
+    <view class="input-group">
+      <label>与家庭成员2关系：</label>
+      <input type="text" name="familyMember2Relation" placeholder="请输入关系"/>
+    </view>
+    <view class="input-group">
+      <label>家庭成员2生日：</label>
+      <input type="date" name="familyMember2Birthdate" placeholder="请输入生日"/>
+    </view>
+    <view class="input-group">
+      <label>家庭成员2工作单位：</label>
+      <input type="text" name="familyMember2Workplace" placeholder="请输入工作单位"/>
+    </view>
+    <view class="input-group">
+      <label>家庭成员2职务：</label>
+      <input type="text" name="familyMember2Position" placeholder="请输入职务"/>
+    </view>
+    <view class="input-group">
+      <label>家庭成员2电话：</label>
+      <input type="text" name="familyMember2Phone" placeholder="请输入电话"/>
+    </view>
+    <!-- Family member 3 -->
+    <view class="input-group">
+      <label>家庭成员3姓名：</label>
+      <input type="text" name="familyMember3Name" placeholder="请输入姓名"/>
+    </view>
+    <view class="input-group">
+      <label>与家庭成员3关系：</label>
+      <input type="text" name="familyMember3Relation" placeholder="请输入关系"/>
+    </view>
+    <view class="input-group">
+      <label>家庭成员3生日：</label>
+      <input type="date" name="familyMember3Birthdate" placeholder="请输入生日"/>
+    </view>
+    <view class="input-group">
+      <label>家庭成员3工作单位：</label>
+      <input type="text" name="familyMember3Workplace" placeholder="请输入工作单位"/>
+    </view>
+    <view class="input-group">
+      <label>家庭成员3职务：</label>
+      <input type="text" name="familyMember3Position" placeholder="请输入职务"/>
+    </view>
+    <view class="input-group">
+      <label>家庭成员3电话：</label>
+      <input type="text" name="familyMember3Phone" placeholder="请输入电话"/>
+    </view>
+    <!-- Education history 1 -->
+    <view class="education-group">
+      <view class="input-group">
+        <label>开始日期1：</label>
+        <input type="date" name="education1StartDate" placeholder="请输入开始日期"/>
+      </view>
+      <view class="input-group">
+        <label>结束日期1：</label>
+        <input type="date" name="education1EndDate" placeholder="请输入结束日期"/>
+      </view>
+      <view class="input-group">
+        <label>毕业院校1：</label>
+        <input type="text" name="education1School" placeholder="请输入毕业院校"/>
+      </view>
+      <view class="input-group">
+        <label>专业1：</label>
+        <input type="text" name="education1Major" placeholder="请输入专业"/>
+      </view>
+      <view class="input-group">
+        <label>学历1：</label>
+        <input type="text" name="education1Degree" placeholder="请输入学历"/>
+      </view>
+      <view class="input-group">
+        <label>学历性质1：</label>
+        <picker mode="selector" range="{{['统招', '自考', '成人']}}" name="education1Type">
+          <view class="picker">请选择学历性质</view>
         </picker>
       </view>
     </view>
-    <view class="input-group">
-  <label>出生年月：</label>
-  <picker mode="date" bindchange="bindBirthChange">
-    <view class="picker">{{birthdate}}</view>
-  </picker>
+
+        <!-- Education history 2 -->
+        <view class="education-group">
+      <view class="input-group">
+        <label>开始日期2：</label>
+        <input type="date" name="education2StartDate" placeholder="请输入开始日期"/>
+      </view>
+      <view class="input-group">
+        <label>结束日期2：</label>
+        <input type="date" name="education2EndDate" placeholder="请输入结束日期"/>
+      </view>
+      <view class="input-group">
+        <label>毕业院校2：</label>
+        <input type="text" name="education2School" placeholder="请输入毕业院校"/>
+      </view>
+      <view class="input-group">
+        <label>专业2：</label>
+        <input type="text" name="education2Major" placeholder="请输入专业"/>
+      </view>
+      <view class="input-group">
+        <label>学历2：</label>
+        <input type="text" name="education2Degree" placeholder="请输入学历"/>
+      </view>
+      <view class="input-group">
+        <label>学历性质2：</label>
+        <picker mode="selector" range="{{['统招', '自考', '成人']}}" name="education2Type">
+          <view class="picker">请选择学历性质</view>
+        </picker>
+      </view>
+    </view>
+    <!-- Education history 3 -->
+    <view class="education-group">
+      <view class="input-group">
+        <label>开始日期3：</label>
+        <input type="date" name="education3StartDate" placeholder="请输入开始日期"/>
+      </view>
+      <view class="input-group">
+        <label>结束日期3：</label>
+        <input type="date" name="education3EndDate" placeholder="请输入结束日期"/>
+      </view>
+      <view class="input-group">
+        <label>毕业院校3：</label>
+        <input type="text" name="education3School" placeholder="请输入毕业院校"/>
+      </view>
+      <view class="input-group">
+        <label>专业3：</label>
+        <input type="text" name="education3Major" placeholder="请输入专业"/>
+      </view>
+      <view class="input-group">
+        <label>学历3：</label>
+        <input type="text" name="education3Degree" placeholder="请输入学历"/>
+      </view>
+      <view class="input-group">
+        <label>学历性质3：</label>
+        <picker mode="selector" range="{{['统招', '自考', '成人']}}" name="education1Type">
+          <view class="picker">请选择学历性质</view>
+        </picker>
+      </view>
+   </view>
+ <!-- Work history 1 -->
+ <view class="work-group">
+      <view class="input-group">
+        <label>工作经历1开始日期：</label>
+        <input type="date" name="work1StartDate" placeholder="请输入开始日期"/>
+      </view>
+      <view class="input-group">
+        <label>工作经历1结束日期：</label>
+        <input type="date" name="work1EndDate" placeholder="请输入结束日期"/>
+      </view>
+      <view class="input-group">
+        <label>工作经历1工作单位：</label>
+        <input type="text" name="work1Company" placeholder="请输入工作单位"/>
+      </view>
+      <view class="input-group">
+        <label>工作经历1部门：</label>
+        <input type="text" name="work1Department" placeholder="请输入部门"/>
+      </view>
+      <view class="input-group">
+        <label>工作经历1职务：</label>
+        <input type="text" name="work1Position" placeholder="请输入职务"/>
+      </view>
+      <view class="input-group">
+        <label>工作经历1月薪：</label>
+        <input type="number" name="work1Salary" placeholder="请输入月薪"/>
+      </view>
+      <view class="input-group">
+        <label>工作经历1离职原因：</label>
+        <input type="text" name="work1ReasonForLeaving" placeholder="请输入离职原因"/>
+      </view>
+      <view class="input-group">
+        <label>工作经历1证明人：</label>
+        <input type="text" name="work1Reference" placeholder="请输入证明人"/>
+      </view>
+      <view class="input-group">
+        <label>工作经历1证明人电话：</label>
+        <input type="text" name="work1ReferencePhone" placeholder="请输入证明人电话"/>
+      </view>
+    </view>
+    <!-- Work history 2 -->
+<view class="work-group">
+  <view class="input-group">
+    <label>工作经历2开始日期：</label>
+    <input type="date" name="work2StartDate" placeholder="请输入开始日期"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历2结束日期：</label>
+    <input type="date" name="work2EndDate" placeholder="请输入结束日期"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历2工作单位：</label>
+    <input type="text" name="work2Company" placeholder="请输入工作单位"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历2部门：</label>
+    <input type="text" name="work2Department" placeholder="请输入部门"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历2职务：</label>
+    <input type="text" name="work2Position" placeholder="请输入职务"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历2月薪：</label>
+    <input type="number" name="work2Salary" placeholder="请输入月薪"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历2离职原因：</label>
+    <input type="text" name="work2ReasonForLeaving" placeholder="请输入离职原因"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历2证明人：</label>
+    <input type="text" name="work2Reference" placeholder="请输入证明人"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历2证明人电话：</label>
+    <input type="text" name="work2ReferencePhone" placeholder="请输入证明人电话"/>
+  </view>
+</view>
+<!-- Work history 3 -->
+<view class="work-group">
+  <view class="input-group">
+    <label>工作经历3开始日期：</label>
+    <input type="date" name="work3StartDate" placeholder="请输入开始日期"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历3结束日期：</label>
+    <input type="date" name="work3EndDate" placeholder="请输入结束日期"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历3工作单位：</label>
+    <input type="text" name="work3Company" placeholder="请输入工作单位"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历3部门：</label>
+    <input type="text" name="work3Department" placeholder="请输入部门"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历3职务：</label>
+    <input type="text" name="work3Position" placeholder="请输入职务"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历3月薪：</label>
+    <input type="number" name="work3Salary" placeholder="请输入月薪"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历3离职原因：</label>
+    <input type="text" name="work3ReasonForLeaving" placeholder="请输入离职原因"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历3证明人：</label>
+    <input type="text" name="work3Reference" placeholder="请输入证明人"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历3证明人电话：</label>
+    <input type="text" name="work3ReferencePhone" placeholder="请输入证明人电话"/>
+  </view>
 </view>
 
-    <view class="input-group">
-      <label>民族：</label>
-      <input type="text" name="ethnicity" placeholder="请输入民族"/>
-    </view>
-    <view class="input-group">
-      <label>身高：</label>
-      <input type="number" name="height" placeholder="请输入身高"/>
-    </view>
 
 
-    <view class="sign">
+<!-- Work history 4 -->
+<view class="work-group">
+  <view class="input-group">
+    <label>工作经历4开始日期：</label>
+    <input type="date" name="work4StartDate" placeholder="请输入开始日期"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历4结束日期：</label>
+    <input type="date" name="work4EndDate" placeholder="请输入结束日期"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历4工作单位：</label>
+    <input type="text" name="work4Company" placeholder="请输入工作单位"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历4部门：</label>
+    <input type="text" name="work4Department" placeholder="请输入部门"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历4职务：</label>
+    <input type="text" name="work4Position" placeholder="请输入职务"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历4月薪：</label>
+    <input type="number" name="work4Salary" placeholder="请输入月薪"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历4离职原因：</label>
+    <input type="text" name="work4ReasonForLeaving" placeholder="请输入离职原因"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历4证明人：</label>
+    <input type="text" name="work4Reference" placeholder="请输入证明人"/>
+  </view>
+  <view class="input-group">
+    <label>工作经历4证明人电话：</label>
+    <input type="text" name="work4ReferencePhone" placeholder="请输入证明人电话"/>
+  </view>
+</view>
+<view class="input-group">
+      <label>自我评价：</label>
+      <textarea type="text" name="selfEvaluation" placeholder="请输入自我评价"/>
+    </view>
+   <!-- Declaration -->
+<view class="checkbox-group">
+  <radio-group>
+    <label class="declaration-label">
+      <radio name="declaration" value="agree" />本人承诺对以上内容的真实性负责，并愿意接受公司对表中内容进行调查，并且本人保证，没有犯罪，吸毒等不良历史记录，如有隐瞒或造假愿接受招聘方的任何处理。
+    </label>
+  </radio-group>
+</view>
+
+<view class="sign">
   <view class="paper">
     <canvas class="handWriting" disable-scroll="true" bindtouchstart="touchstart1" bindtouchmove="touchmove1"  canvas-id="handWriting1">
     </canvas>
@@ -41,10 +686,9 @@
     <button size="" type="warn" bindtap="reSign1">重新签字</button>
   </view>
 </view>
-<view class="image" hidden="{{src?false:true}}">
-<image src="{{src}}" ></image>
-</view>
-
+    <view class="image" hidden="{{src?false:true}}">
+    <image src="{{src}}" ></image>
+    </view>
     <button type="primary" formType="submit">提交</button>
   </form>
   <modal hidden="{{!isSubmitted}}" title="提示" content="提交成功!" confirmText="确定" bindconfirm="clearForm"></modal>

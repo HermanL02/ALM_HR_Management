@@ -7,12 +7,22 @@ Page({
       name:'addArchive',
       data:{
         name: formData.name,
+        genderIndex: genderIndex,
         birthdate: this.data.birthdate,
+        ethnicity: formData.ethnicity,
+        height:formData.height,
+        weight:formData.weight,
+        politicalStatus:formData.politicalStatus,
+        bloodType:formData.bloodType,
+        professionalTitle:formData.professionalTitle,
+        IDtype: this.data.currentIDtype,
+        currentHouseholdNature: this.data.currentHouseholdNature,
         openid:wx.getUserInfo().openid,
       }
     })
   },
     data: {
+      imgUrl: '',
       context1: null,
       hasDraw:false, //默认没有画
       src:null,
@@ -20,6 +30,55 @@ Page({
       genderArray: ['男', '女'],
       genderIndex: 0,
       birthdate: '请选择日期',
+      IDtypes: ['身份证', '驾照', '护照', '其他'],
+      currentIDtype: '请选择证件类型',
+      householdNatures: ['农', '非农'],
+    currentHouseholdNature: '请选择户籍性质',
+    canDrives: ['是', '否'],
+    currentCanDrive: '请选择是否可熟练驾驶',
+    hasChilds: ['是', '否'],
+    currentHasChild: '请选择是否生育',
+    supportDeployments: ['是', '否'],
+    currentSupportDeployment: '请选择是否支持外派',
+    availabilities: ['1周内', '2周内', '1月内', '2月内', '其他'],
+    currentAvailability: '请选择可到岗时间'
+    },
+    handleSupportDeploymentChange(e) {
+      const { value } = e.detail;
+      this.setData({
+        currentSupportDeployment: this.data.supportDeployments[value]
+      });
+    },
+    
+    handleAvailabilityChange(e) {
+      const { value } = e.detail;
+      this.setData({
+        currentAvailability: this.data.availabilities[value]
+      });
+    },
+    handleCanDriveChange(e) {
+      const { value } = e.detail;
+      this.setData({
+        currentCanDrive: this.data.canDrives[value]
+      });
+    },
+    handleHasChildChange(e) {
+      const { value } = e.detail;
+      this.setData({
+        currentHasChild: this.data.hasChilds[value]
+      });
+    },
+    handleHouseholdNatureChange(e) {
+      const { value } = e.detail;
+      this.setData({
+        currentHouseholdNature: this.data.householdNatures[value]
+      });
+    },
+    handlePickerChange(e) {
+      const { value } = e.detail;
+      this.setData({
+        currentIDtype: this.data.IDtypes[value]
+      });
     },
     bindBirthChange: function(e) {
       this.setData({
@@ -88,15 +147,48 @@ Page({
 
 
     uploadHeadImg: function() {
-      let a = this;
-      wx.showActionSheet({
-          itemList: [ "从相册中选择", "拍照" ],
-          itemColor: "#f7982a",
-          success: function(e) {
-          //album:相册   //camera拍照
-              e.cancel || (0 == e.tapIndex ? a.chooseWxImageShop("album") : 1 == e.tapIndex && a.chooseWxImageShop("camera"));
+      var that = this
+      wx.chooseImage({
+          count: 1,
+          sizeType: ['compressed'],
+          sourceType: ['album', 'camera'],
+          success(res) {
+              const tempFilePaths = res.tempFilePaths[0]
+  
+              // 生成一个随机的文件路径
+              const cloudPath = 'headImg/' + Date.now() + '-' + Math.floor(Math.random(0, 1) * 1000) + tempFilePaths.match(/\.[^.]+?$/)[0]
+              wx.cloud.uploadFile({
+                  cloudPath, //文件存储的路径
+                  filePath: tempFilePaths, // 文件路径
+                  success: res => {
+                      console.log('[上传文件] 成功：', res)
+  
+                      wx.showToast({
+                          title: '上传成功',
+                          icon: 'success'
+                      })
+  
+                      that.setData({
+                          imgUrl: res.fileID
+                      })
+                  },
+                  fail: err => {
+                      wx.showToast({
+                          icon: 'none',
+                          title: '上传失败',
+                      })
+                      console.error('[上传文件] 失败：', err)
+                  }
+              })
+          },
+          fail: err => {
+              wx.showToast({
+                  icon: 'none',
+                  title: '选择图片失败',
+              })
+              console.error('[选择图片] 失败：', err)
           }
-      });
+      })
   },
   chooseWxImageShop: function(a) {
     var e = this;
@@ -122,37 +214,7 @@ Page({
     });
 },
 upload_file: function(e) {
-  wx.showLoading({
-      title: "上传中"
-  });
-  wx.uploadFile({
-      url:url,
-      filePath: e,//图片路径
-      name: "user_avatar",
-      formData: {
-          token: a.globalData.token,
-          user_avatar: "filePath"
-      },
-      header: {
-          "Content-Type": "multipart/form-data"
-      },
-      success: function(a) {
-          wx.hideLoading();
-          wx.showToast({
-              title: "上传成功",
-              icon: "success",
-              duration: 3000
-          });
-      },
-      fail: function(a) {
-          wx.hideLoading();
-          wx.showToast({
-              title: "上传失败",
-              icon: "none",
-              duration: 3000
-          });
-      }
-  });
+
 },
   });
 
