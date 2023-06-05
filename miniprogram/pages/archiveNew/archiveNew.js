@@ -1,59 +1,47 @@
 // archiveNew.js
 Page({
-  submitForm: function(e) {
-    console.log(e.detail.value);  
-    let formData = e.detail.value;
-    wx.cloud.callFunction({
-      name:'addArchive',
-      data:{
-        name: formData.name,
-        genderIndex: this.data.genderIndex,
-        birthdate: this.data.birthdate,
-        ethnicity: formData.ethnicity,
-        height:formData.height,
-        weight:formData.weight,
-        politicalStatus:formData.politicalStatus,
-        bloodType:formData.bloodType,
-        professionalTitle:formData.professionalTitle,
-        IDtype: this.data.currentIDtype,
-        currentHouseholdNature: this.data.currentHouseholdNature,
-        openid:wx.getUserInfo().openid,
-      }
-    })
-  },
     data: {
+      // 预留上传至云函数
+      form: {
+        declarationChecked: false,
+       
+      },
+      // 签名预留variable，预计也要部分传入form
       imgUrl: '',
       context1: null,
       hasDraw:false, //默认没有画
       src:null,
       avatar:'',
+      // 预留选项
       genderArray: ['男', '女'],
-      genderIndex: 0,
-      birthdate: '请选择日期',
       IDtypes: ['身份证', '驾照', '护照', '其他'],
-      currentIDtype: '请选择证件类型',
       householdNatures: ['农', '非农'],
-    currentHouseholdNature: '请选择户籍性质',
-    canDrives: ['是', '否'],
-    currentCanDrive: '请选择是否可熟练驾驶',
-    hasChilds: ['是', '否'],
-    currentHasChild: '请选择是否生育',
-    supportDeployments: ['是', '否'],
-    currentSupportDeployment: '请选择是否支持外派',
-    availabilities: ['1周内', '2周内', '1月内', '2月内', '其他'],
-    currentAvailability: '请选择可到岗时间'
+      canDrives: ['是', '否'],
+      hasChilds: ['是', '否'],
+      supportDeployments: ['是', '否'],
+      availabilities: ['1周内', '2周内', '1月内', '2月内', '其他'],
+
     },
+    // 所有输入性change统一函数
+    handleInputChange: function(e) {
+      let field = e.currentTarget.dataset.field;  // 获取字段名称
+      console.log(field);
+      let value = e.detail.value;  // 获取输入的值
+      this.setData({
+        [`form.${field}`]: value
+      });
+    },  
+    // 所有picker的函数
     handleSupportDeploymentChange(e) {
       const { value } = e.detail;
       this.setData({
         currentSupportDeployment: this.data.supportDeployments[value]
       });
-    },
-    
-    handleAvailabilityChange(e) {
-      const { value } = e.detail;
+    }, 
+    handleAvailabilityChange: function(e) {
+      console.log('handleAvailabilityChange is called');
       this.setData({
-        currentAvailability: this.data.availabilities[value]
+        'form.currentAvailability': this.data.availabilities[e.detail.value]
       });
     },
     handleCanDriveChange(e) {
@@ -62,6 +50,7 @@ Page({
         currentCanDrive: this.data.canDrives[value]
       });
     },
+ 
     handleHasChildChange(e) {
       const { value } = e.detail;
       this.setData({
@@ -82,14 +71,71 @@ Page({
     },
     bindBirthChange: function(e) {
       this.setData({
-        birthdate: e.detail.value
+        'form.birthdate': e.detail.value
       });
     },
     genderChange(e) {
       this.setData({
-        genderIndex: e.detail.value,
+        'form.genderIndex': e.detail.value,
       });
     },
+    // Checkbox change
+  // 监听复选框状态改变的事件
+  checkboxChange: function(e) {
+    console.log('checkbox发生change事件，携带value值为：', e.detail.value);
+    // 在这里添加你的代码，比如改变数据或者显示提示等
+  },
+    
+    
+    
+    // 提交
+    submitForm: function() {
+      let self = this;
+      console.log(this.data.form);
+      wx.getUserInfo({
+        success: function(userInfoRes) {
+          wx.showLoading({
+            title: '正在提交...',
+          });
+          wx.cloud.callFunction({
+            name:'addArchive',
+            data: {
+              ...self.data.form,
+              openid: userInfoRes.userInfo.openid
+            },
+            
+            success: function(cloudRes) {
+              console.log(cloudRes);
+              if (cloudRes.result && cloudRes.result.statusCode == 200) {
+                wx.showToast({
+                  title: '成功提交',
+                  icon: 'success',
+                  duration: 2000
+                });
+              } else {
+                console.log(cloudRes.result.statusCode);
+                wx.showToast({
+                  title: '提交失败',
+                  icon: 'none',
+                  duration: 2000
+                });
+              }
+            },
+            fail: function(error) {
+              wx.showToast({
+                title: '网络错误',
+                icon: 'none',
+                duration: 2000
+              });
+            }
+          });
+        }
+      });
+  },
+  
+
+
+    // 签字部分
     onLoad: function() {
       var context1 = wx.createCanvasContext('handWriting1');
       context1.setStrokeStyle("#000000")
@@ -129,9 +175,12 @@ Page({
     sign1ok: function () {
       var that = this;
       if(!that.data.hasDraw){
-        console.log("签字是空白的 没有签字")
+        console.log("签字无法读取，请重新签字")
       }else{
         var context1 = that.data.context1;
+        wx.showLoading({
+          title: '正在上传签名...',
+        });
         context1.draw(true, wx.canvasToTempFilePath({
           canvasId: 'handWriting1',
           success(res) {
@@ -139,13 +188,38 @@ Page({
             that.setData({
               src: res.tempFilePath
             })
-             
+    
+            // 上传文件到云存储
+            wx.cloud.uploadFile({
+              cloudPath: 'your/path/' + new Date().getTime() + '.png', // 这里请按你的需求自定义路径和文件名
+              filePath: that.data.src,
+              success: res => {
+                console.log('[上传文件] 成功：', res)
+        
+                wx.showToast({
+                  title: '上传成功',
+                  icon: 'success'
+                })
+        
+                that.setData({
+                  'form.signature': res.fileID
+                })
+                  
+              },
+              fail: err => {
+                wx.showToast({
+                  icon: 'none',
+                  title: '上传失败',
+                })
+                console.error('[上传文件] 失败：', err)
+              }
+            })
           }
         }))
       }
     },
 
-
+//上传头图
     uploadHeadImg: function() {
       var that = this
       wx.chooseImage({

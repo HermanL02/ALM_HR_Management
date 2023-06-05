@@ -20,12 +20,12 @@
 </view>
 
     <view class='weui-cell'>
-            <view class='weui-cell__hd'>
-                <label class='weui-label'>姓名：</label>
-            </view>
-            <view class='weui-cell__bd'>
-                <input class='weui-input' type="text" name="name" placeholder="请输入姓名"/>
-            </view>
+      <view class='weui-cell__hd'>
+  <label class='weui-label'>姓名：</label>
+</view>
+<view class='weui-cell__bd'>
+  <input class='weui-input' type="text" name="name" placeholder="请输入姓名"  data-field="name" bindinput="handleInputChange"/>
+</view>
     </view>
     <view class='weui-cell'>
             <view class='weui-cell__hd'>
@@ -33,7 +33,7 @@
             </view>
             <view class='weui-cell__bd'>
                 <picker mode="selector" range="{{genderArray}}" bindchange="genderChange">
-                    <view class="picker">{{genderArray[genderIndex]}}</view>
+                    <view class="weui-input">{{genderArray[form.genderIndex]}}</view>
                 </picker>
             </view>
       </view>
@@ -43,7 +43,7 @@
     </view>
     <view class="weui-cell__bd">
       <picker mode="date" bindchange="bindBirthChange">
-        <view class="picker">{{birthdate}}</view>
+        <view class="weui-input">{{form.birthdate}}</view>
       </picker>
     </view>
   </view>
@@ -53,7 +53,7 @@
       <label class="weui-label">民族：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="ethnicity" placeholder="请输入民族"/>
+      <input class="weui-input" type="text" name="ethnicity" placeholder="请输入民族" data-field="ethnicity" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -61,7 +61,7 @@
       <label class="weui-label">身高：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="number" name="height" placeholder="请输入身高"/>
+      <input class="weui-input" type="number" name="height" placeholder="请输入身高" data-field="height" bindinput="handleInputChange"/>
     </view>
   </view>
 
@@ -70,7 +70,7 @@
       <label class="weui-label">体重：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="number" name="weight" placeholder="请输入体重"/>
+      <input class="weui-input" type="number" name="weight" placeholder="请输入体重" data-field="weight" bindinput="handleInputChange"/>
     </view>
   </view>
 
@@ -79,7 +79,7 @@
       <label class="weui-label">政治面貌：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="politicalStatus" placeholder="请输入政治面貌"/>
+      <input class="weui-input" type="text" name="politicalStatus" placeholder="请输入政治面貌" data-field="politicalStatus" bindinput="handleInputChange"/>
     </view>
   </view>
 
@@ -88,7 +88,7 @@
       <label class="weui-label">血型：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="bloodType" placeholder="请输入血型"/>
+      <input class="weui-input" type="text" name="bloodType" placeholder="请输入血型" data-field="bloodType" bindinput="handleInputChange"/>
     </view>
   </view>
 
@@ -97,7 +97,7 @@
       <label class="weui-label">职称及注册：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="professionalTitle" placeholder="请输入职称及注册"/>
+      <input class="weui-input" type="text" name="professionalTitle" placeholder="请输入职称及注册" data-field="professionalTitle" bindinput="handleInputChange"/>
     </view>
   </view>
 
@@ -108,7 +108,7 @@
     </view>
     <view class="weui-cell__bd">
       <picker mode="selector" range="{{IDtypes}}" bindchange="handlePickerChange" name="IDtype">
-        <view class="picker">{{currentIDtype}}</view>
+        <view class="weui-input">{{currentIDtype}}</view>
       </picker>
     </view>
   </view>
@@ -119,7 +119,7 @@
     </view>
     <view class="weui-cell__bd">
       <picker mode="selector" range="{{householdNatures}}" bindchange="handleHouseholdNatureChange" name="householdNature">
-        <view class="picker">{{currentHouseholdNature}}</view>
+        <view class="weui-input">{{currentHouseholdNature}}</view>
       </picker>
     </view>
   </view>
@@ -130,7 +130,7 @@
       <label class="weui-label">证件号码：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="IDnumber" placeholder="请输入证件号码"/>
+      <input class="weui-input" type="text" name="IDnumber" placeholder="请输入证件号码" data-field="IDnumber" bindinput="handleInputChange"/>
     </view>
   </view>
 
@@ -139,7 +139,7 @@
       <label class="weui-label">毕业院校：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="graduatedFrom" placeholder="请输入毕业院校"/>
+      <input class="weui-input" type="text" name="graduatedFrom" placeholder="请输入毕业院校" data-field="graduatedFrom" bindinput="handleInputChange"/>
     </view>
   </view>
 
@@ -148,7 +148,7 @@
       <label class="weui-label">所学专业：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="major" placeholder="请输入所学专业"/>
+      <input class="weui-input" type="text" name="major" placeholder="请输入所学专业" data-field="major" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -156,7 +156,7 @@
       <label class="weui-label">学历：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="education" placeholder="请输入学历"/>
+      <input class="weui-input" type="text" name="education" placeholder="请输入学历" data-field="education" bindinput="handleInputChange"/>
     </view>
   </view>
 
@@ -165,7 +165,7 @@
       <label class="weui-label">希望待遇：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="desiredSalary" placeholder="请输入希望待遇"/>
+      <input class="weui-input" type="text" name="desiredSalary" placeholder="请输入希望待遇" data-field="desiredSalary" bindinput="handleInputChange"/>
     </view>
   </view>
 
@@ -174,7 +174,7 @@
       <label class="weui-label">外语水平：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="foreignLanguageSkill" placeholder="请输入外语水平"/>
+      <input class="weui-input" type="text" name="foreignLanguageSkill" placeholder="请输入外语水平" data-field="foreignLanguageSkill" bindinput="handleInputChange"/>
     </view>
   </view>
 
@@ -183,7 +183,7 @@
       <label class="weui-label">计算机水平：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="computerSkill" placeholder="请输入计算机水平"/>
+      <input class="weui-input" type="text" name="computerSkill" placeholder="请输入计算机水平" data-field="computerSkill" bindinput="handleInputChange"/>
     </view>
   </view>
 
@@ -192,7 +192,7 @@
       <label class="weui-label">特长爱好：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="hobbies" placeholder="请输入特长爱好"/>
+      <input class="weui-input" type="text" name="hobbies" placeholder="请输入特长爱好" data-field="hobbies" bindinput="handleInputChange"/>
     </view>
   </view>
 
@@ -201,7 +201,7 @@
       <label class="weui-label">婚姻状况：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="maritalStatus" placeholder="请输入婚姻状况"/>
+      <input class="weui-input" type="text" name="maritalStatus" placeholder="请输入婚姻状况" data-field="maritalStatus" bindinput="handleInputChange"/>
     </view>
   </view>
 
@@ -210,7 +210,7 @@
       <label class="weui-label">驾照：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="drivingLicense" placeholder="请输入驾照"/>
+      <input class="weui-input" type="text" name="drivingLicense" placeholder="请输入驾照" data-field="drivingLicense" bindinput="handleInputChange"/>
     </view>
   </view>
   
@@ -244,7 +244,7 @@
       <label class="weui-label">子女状况：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="childStatus" placeholder="请输入子女状况"/>
+      <input class="weui-input" type="text" name="childStatus" placeholder="请输入子女状况" data-field="childStatus" bindinput="handleInputChange"/>
     </view>
   </view>
 
@@ -254,7 +254,7 @@
       <label class="weui-label">传染病史及重大疾病史记录：</label>
     </view>
     <view class="weui-cell__bd">
-      <textarea class="weui-textarea" placeholder="请输入传染病史及重大疾病史记录" name="medicalHistory"></textarea>
+      <textarea class="weui-textarea" placeholder="请输入传染病史及重大疾病史记录" name="medicalHistory" data-field="medicalHistory" bindinput="handleInputChange"></textarea>
     </view>
   </view>
     <!-- Continuing from the previous fields -->
@@ -264,7 +264,7 @@
     <label class="weui-label">家庭住址：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="homeAddress" placeholder="请输入家庭住址"/>
+    <input class="weui-input" type="text" name="homeAddress" placeholder="请输入家庭住址" data-field="homeAddress" bindinput="handleInputChange"/>
   </view>
 </view>
 
@@ -274,7 +274,7 @@
     <label class="weui-label">户口所在地：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="residence" placeholder="请输入户口所在地"/>
+    <input class="weui-input" type="text" name="residence" placeholder="请输入户口所在地" data-field="residence" bindinput="handleInputChange"/>
   </view>
 </view>
 
@@ -284,7 +284,7 @@
     <label class="weui-label">移动电话号码：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="mobilePhone" placeholder="请输入移动电话号码"/>
+    <input class="weui-input" type="text" name="mobilePhone" placeholder="请输入移动电话号码" data-field="mobilePhone" bindinput="handleInputChange"/>
   </view>
 </view>
 
@@ -294,7 +294,7 @@
     <label class="weui-label">紧急联系人：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="emergencyContact" placeholder="请输入紧急联系人"/>
+    <input class="weui-input" type="text" name="emergencyContact" placeholder="请输入紧急联系人" data-field="emergencyContact" bindinput="handleInputChange"/>
   </view>
 </view>
 
@@ -304,7 +304,7 @@
     <label class="weui-label">紧急联系人电话：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="emergencyContactPhone" placeholder="请输入紧急联系人电话"/>
+    <input class="weui-input" type="text" name="emergencyContactPhone" placeholder="请输入紧急联系人电话" data-field="emergencyContactPhone" bindinput="handleInputChange"/>
   </view>
 </view>
 
@@ -314,8 +314,8 @@
     <label class="weui-label">电子邮件：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="email" placeholder="请输入电子邮件"/>
-  </view>
+  <input class="weui-input" type="text" name="email" placeholder="请输入电子邮件" bindinput="handleEmailInput" data-field="email" bindinput="handleInputChange"/>
+</view>
 </view>
 
 <!-- 是否支持外派 -->
@@ -337,7 +337,7 @@
   </view>
   <view class="weui-cell__bd">
     <picker mode="selector" range="{{availabilities}}" bindchange="handleAvailabilityChange">
-    <view class="weui-input">{{currentAvailability}}</view>
+    <view class="weui-input">{{form.currentAvailability}}</view>
   </picker>
 </view>
 </view>
@@ -348,7 +348,7 @@
     <label class="weui-label">家庭成员1姓名：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember1Name" placeholder="请输入姓名"/>
+    <input class="weui-input" type="text" name="familyMember1Name" placeholder="请输入姓名" data-field="familyMember1Name" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -356,7 +356,7 @@
     <label class="weui-label">与家庭成员1关系：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember1Relation" placeholder="请输入关系"/>
+    <input class="weui-input" type="text" name="familyMember1Relation" placeholder="请输入关系" data-field="familyMember1Relation" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -364,7 +364,7 @@
     <label class="weui-label">家庭成员1生日：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="date" name="familyMember1Birthdate" placeholder="请输入生日"/>
+    <input class="weui-input" type="date" name="familyMember1Birthdate" placeholder="请输入生日" data-field="familyMember1Birthdate" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -372,7 +372,7 @@
     <label class="weui-label">家庭成员1工作单位：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember1Workplace" placeholder="请输入工作单位"/>
+    <input class="weui-input" type="text" name="familyMember1Workplace" placeholder="请输入工作单位" data-field="familyMember1Workplace" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -380,7 +380,7 @@
     <label class="weui-label">家庭成员1职务：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember1Position" placeholder="请输入职务"/>
+    <input class="weui-input" type="text" name="familyMember1Position" placeholder="请输入职务" data-field="familyMember1Position" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -388,7 +388,7 @@
     <label class="weui-label">家庭成员1电话：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember1Phone" placeholder="请输入电话"/>
+    <input class="weui-input" type="text" name="familyMember1Phone" placeholder="请输入电话" data-field="familyMember1Phone" bindinput="handleInputChange"/>
   </view>
 </view>
 <!-- Family member 2 -->
@@ -397,7 +397,7 @@
     <label class="weui-label">家庭成员2姓名：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember2Name" placeholder="请输入姓名"/>
+    <input class="weui-input" type="text" name="familyMember2Name" placeholder="请输入姓名" data-field="familyMember2Name" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -405,7 +405,7 @@
     <label class="weui-label">与家庭成员2关系：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember2Relation" placeholder="请输入关系"/>
+    <input class="weui-input" type="text" name="familyMember2Relation" placeholder="请输入关系" data-field="familyMember2Relation" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -413,7 +413,7 @@
     <label class="weui-label">家庭成员2生日：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="date" name="familyMember2Birthdate" placeholder="请输入生日"/>
+    <input class="weui-input" type="date" name="familyMember2Birthdate" placeholder="请输入生日" data-field="familyMember2Birthdate" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -421,7 +421,7 @@
     <label class="weui-label">家庭成员2工作单位：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember2Workplace" placeholder="请输入工作单位"/>
+    <input class="weui-input" type="text" name="familyMember2Workplace" placeholder="请输入工作单位" data-field="familyMember2Workplace" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -429,7 +429,7 @@
     <label class="weui-label">家庭成员2职务：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember2Position" placeholder="请输入职务"/>
+    <input class="weui-input" type="text" name="familyMember2Position" placeholder="请输入职务" data-field="familyMember2Position" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -437,7 +437,7 @@
     <label class="weui-label">家庭成员2电话：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember2Phone" placeholder="请输入电话"/>
+    <input class="weui-input" type="text" name="familyMember2Phone" placeholder="请输入电话" data-field="familyMember2Phone" bindinput="handleInputChange"/>
   </view>
 </view>
     <!-- Family member 3 -->
@@ -446,7 +446,7 @@
     <label class="weui-label">家庭成员3姓名：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember3Name" placeholder="请输入姓名"/>
+    <input class="weui-input" type="text" name="familyMember3Name" placeholder="请输入姓名" data-field="familyMember3Name" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -454,7 +454,7 @@
     <label class="weui-label">与家庭成员3关系：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember3Relation" placeholder="请输入关系"/>
+    <input class="weui-input" type="text" name="familyMember3Relation" placeholder="请输入关系" data-field="familyMember3Relation" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -462,7 +462,7 @@
     <label class="weui-label">家庭成员3生日：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="date" name="familyMember3Birthdate" placeholder="请输入生日"/>
+    <input class="weui-input" type="date" name="familyMember3Birthdate" placeholder="请输入生日" data-field="familyMember3Birthdate" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -470,7 +470,7 @@
     <label class="weui-label">家庭成员3工作单位：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember3Workplace" placeholder="请输入工作单位"/>
+    <input class="weui-input" type="text" name="familyMember3Workplace" placeholder="请输入工作单位"data-field="familyMember3Workplace" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -478,7 +478,7 @@
     <label class="weui-label">家庭成员3职务：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember3Position" placeholder="请输入职务"/>
+    <input class="weui-input" type="text" name="familyMember3Position" placeholder="请输入职务" data-field="familyMember3Position" bindinput="handleInputChange"/>
   </view>
 </view>
 <view class="weui-cell">
@@ -486,7 +486,7 @@
     <label class="weui-label">家庭成员3电话：</label>
   </view>
   <view class="weui-cell__bd">
-    <input class="weui-input" type="text" name="familyMember3Phone" placeholder="请输入电话"/>
+    <input class="weui-input" type="text" name="familyMember3Phone" placeholder="请输入电话" data-field="familyMember3Phone" bindinput="handleInputChange"/>
   </view>
 </view>
     <!-- Education history 1 -->
@@ -497,11 +497,12 @@
     </view>
     <view class="weui-cell__bd">
       <input class="weui-input" type="date" name="education1StartDate" placeholder="请输入开始日期"/>
-    </view>
+    </view> <!-- Picker -->
   </view>
   <view class="weui-cell">
     <view class="weui-cell__hd">
       <label class="weui-label">结束日期1：</label>
+      <!-- Picker -->
     </view>
     <view class="weui-cell__bd">
       <input class="weui-input" type="date" name="education1EndDate" placeholder="请输入结束日期"/>
@@ -512,7 +513,7 @@
       <label class="weui-label">毕业院校1：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="education1School" placeholder="请输入毕业院校"/>
+      <input class="weui-input" type="text" name="education1School" placeholder="请输入毕业院校" data-field="education1School" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -520,7 +521,7 @@
       <label class="weui-label">专业1：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="education1Major" placeholder="请输入专业"/>
+      <input class="weui-input" type="text" name="education1Major" placeholder="请输入专业" data-field="education1Major" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -528,7 +529,7 @@
       <label class="weui-label">学历1：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="education1Degree" placeholder="请输入学历"/>
+      <input class="weui-input" type="text" name="education1Degree" placeholder="请输入学历" data-field="education1Degree" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell weui-cell_select weui-cell_select-after">
@@ -537,7 +538,7 @@
     </view>
     <view class="weui-cell__bd">
       <picker mode="selector" range="{{['统招', '自考', '成人']}}" name="education1Type">
-        <view class="picker">请选择学历性质</view>
+        <view class="weui-input">请选择学历性质</view>
       </picker>
     </view>
   </view>
@@ -566,7 +567,7 @@
       <label class="weui-label">毕业院校2：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="education2School" placeholder="请输入毕业院校"/>
+      <input class="weui-input" type="text" name="education2School" placeholder="请输入毕业院校" data-field="education2School" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -574,7 +575,7 @@
       <label class="weui-label">专业2：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="education2Major" placeholder="请输入专业"/>
+      <input class="weui-input" type="text" name="education2Major" placeholder="请输入专业" data-field="education2Major" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -582,7 +583,7 @@
       <label class="weui-label">学历2：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="education2Degree" placeholder="请输入学历"/>
+      <input class="weui-input" type="text" name="education2Degree" placeholder="请输入学历" data-field="education2Degree" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell weui-cell_select weui-cell_select-after">
@@ -591,7 +592,7 @@
     </view>
     <view class="weui-cell__bd">
       <picker mode="selector" range="{{['统招', '自考', '成人']}}" name="education2Type">
-        <view class="picker">请选择学历性质</view>
+        <view class="weui-input">请选择学历性质</view>
       </picker>
     </view>
   </view>
@@ -604,7 +605,7 @@
       <label class="weui-label">工作经历1开始日期：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="date" name="work1StartDate" placeholder="请输入开始日期"/>
+      <input class="weui-input" type="date" name="work1StartDate" placeholder="请输入开始日期" />
     </view>
   </view>
   <view class="weui-cell">
@@ -620,7 +621,7 @@
       <label class="weui-label">工作经历1工作单位：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work1Company" placeholder="请输入工作单位"/>
+      <input class="weui-input" type="text" name="work1Company" placeholder="请输入工作单位" data-field="work1Company" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -628,7 +629,7 @@
       <label class="weui-label">工作经历1部门：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work1Department" placeholder="请输入部门"/>
+      <input class="weui-input" type="text" name="work1Department" placeholder="请输入部门" data-field="work1Department" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -636,7 +637,7 @@
       <label class="weui-label">工作经历1职务：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work1Position" placeholder="请输入职务"/>
+      <input class="weui-input" type="text" name="work1Position" placeholder="请输入职务" data-field="work1Position" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -644,7 +645,7 @@
       <label class="weui-label">工作经历1月薪：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="number" name="work1Salary" placeholder="请输入月薪"/>
+      <input class="weui-input" type="number" name="work1Salary" placeholder="请输入月薪" data-field="work1Salary" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -652,7 +653,7 @@
       <label class="weui-label">工作经历1离职原因：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work1ReasonForLeaving" placeholder="请输入离职原因"/>
+      <input class="weui-input" type="text" name="work1ReasonForLeaving" placeholder="请输入离职原因" data-field="work1ReasonForLeaving" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -660,7 +661,7 @@
       <label class="weui-label">工作经历1证明人：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work1Reference" placeholder="请输入证明人"/>
+      <input class="weui-input" type="text" name="work1Reference" placeholder="请输入证明人" data-field="work1Reference" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -668,7 +669,7 @@
       <label class="weui-label">工作经历1证明人电话：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work1ReferencePhone" placeholder="请输入证明人电话"/>
+      <input class="weui-input" type="text" name="work1ReferencePhone" placeholder="请输入证明人电话" data-field="work1ReferencePhone" bindinput="handleInputChange"/>
     </view>
   </view>
 </view>
@@ -695,7 +696,7 @@
       <label class="weui-label">工作经历2工作单位：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work2Company" placeholder="请输入工作单位"/>
+      <input class="weui-input" type="text" name="work2Company" placeholder="请输入工作单位" data-field="work2Company" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -703,7 +704,7 @@
       <label class="weui-label">工作经历2部门：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work2Department" placeholder="请输入部门"/>
+      <input class="weui-input" type="text" name="work2Department" placeholder="请输入部门" data-field="work2Department" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -711,7 +712,7 @@
       <label class="weui-label">工作经历2职务：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work2Position" placeholder="请输入职务"/>
+      <input class="weui-input" type="text" name="work2Position" placeholder="请输入职务" data-field="work2Position" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -719,7 +720,7 @@
       <label class="weui-label">工作经历2月薪：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="number" name="work2Salary" placeholder="请输入月薪"/>
+      <input class="weui-input" type="number" name="work2Salary" placeholder="请输入月薪" data-field="work2Salary" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -727,7 +728,7 @@
       <label class="weui-label">工作经历2离职原因：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work2ReasonForLeaving" placeholder="请输入离职原因"/>
+      <input class="weui-input" type="text" name="work2ReasonForLeaving" placeholder="请输入离职原因" data-field="work2ReasonForLeaving" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -735,7 +736,7 @@
       <label class="weui-label">工作经历2证明人：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work2Reference" placeholder="请输入证明人"/>
+      <input class="weui-input" type="text" name="work2Reference" placeholder="请输入证明人" data-field="work2Reference" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -743,7 +744,7 @@
       <label class="weui-label">工作经历2证明人电话：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work2ReferencePhone" placeholder="请输入证明人电话"/>
+      <input class="weui-input" type="text" name="work2ReferencePhone" placeholder="请输入证明人电话" data-field="work2ReferencePhone" bindinput="handleInputChange"/>
     </view>
   </view>
 </view>
@@ -770,7 +771,7 @@
       <label class="weui-label">工作经历3工作单位：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work3Company" placeholder="请输入工作单位"/>
+      <input class="weui-input" type="text" name="work3Company" placeholder="请输入工作单位" data-field="work3Company" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -778,7 +779,7 @@
       <label class="weui-label">工作经历3部门：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work3Department" placeholder="请输入部门"/>
+      <input class="weui-input" type="text" name="work3Department" placeholder="请输入部门" data-field="work3Department" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -786,7 +787,7 @@
       <label class="weui-label">工作经历3职务：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work3Position" placeholder="请输入职务"/>
+      <input class="weui-input" type="text" name="work3Position" placeholder="请输入职务" data-field="work3Position" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -794,7 +795,7 @@
       <label class="weui-label">工作经历3月薪：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="number" name="work3Salary" placeholder="请输入月薪"/>
+      <input class="weui-input" type="number" name="work3Salary" placeholder="请输入月薪" data-field="work3Salary" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -802,7 +803,7 @@
       <label class="weui-label">工作经历3离职原因：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work3ReasonForLeaving" placeholder="请输入离职原因"/>
+      <input class="weui-input" type="text" name="work3ReasonForLeaving" placeholder="请输入离职原因" data-field="work3ReasonForLeaving" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -810,7 +811,7 @@
       <label class="weui-label">工作经历3证明人：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work3Reference" placeholder="请输入证明人"/>
+      <input class="weui-input" type="text" name="work3Reference" placeholder="请输入证明人" data-field="work3Reference" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -818,7 +819,7 @@
       <label class="weui-label">工作经历3证明人电话：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work3ReferencePhone" placeholder="请输入证明人电话"/>
+      <input class="weui-input" type="text" name="work3ReferencePhone" placeholder="请输入证明人电话" data-field="work3ReferencePhone" bindinput="handleInputChange"/>
     </view>
   </view>
 </view>
@@ -848,7 +849,7 @@
       <label class="weui-label">工作经历4工作单位：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work4Company" placeholder="请输入工作单位"/>
+      <input class="weui-input" type="text" name="work4Company" placeholder="请输入工作单位" data-field="work4Company" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -856,7 +857,7 @@
       <label class="weui-label">工作经历4部门：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work4Department" placeholder="请输入部门"/>
+      <input class="weui-input" type="text" name="work4Department" placeholder="请输入部门" data-field="work4Department" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -864,7 +865,7 @@
       <label class="weui-label">工作经历4职务：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work4Position" placeholder="请输入职务"/>
+      <input class="weui-input" type="text" name="work4Position" placeholder="请输入职务" data-field="work4Position" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -872,7 +873,7 @@
       <label class="weui-label">工作经历4月薪：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="number" name="work4Salary" placeholder="请输入月薪"/>
+      <input class="weui-input" type="number" name="work4Salary" placeholder="请输入月薪" data-field="work4Salary" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -880,7 +881,7 @@
       <label class="weui-label">工作经历4离职原因：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work4ReasonForLeaving" placeholder="请输入离职原因"/>
+      <input class="weui-input" type="text" name="work4ReasonForLeaving" placeholder="请输入离职原因" data-field="work4ReasonForLeaving" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -888,7 +889,7 @@
       <label class="weui-label">工作经历4证明人：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work4Reference" placeholder="请输入证明人"/>
+      <input class="weui-input" type="text" name="work4Reference" placeholder="请输入证明人" data-field="work4Reference" bindinput="handleInputChange"/>
     </view>
   </view>
   <view class="weui-cell">
@@ -896,7 +897,7 @@
       <label class="weui-label">工作经历4证明人电话：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="text" name="work4ReferencePhone" placeholder="请输入证明人电话"/>
+      <input class="weui-input" type="text" name="work4ReferencePhone" placeholder="请输入证明人电话" data-field="work4ReferencePhone" bindinput="handleInputChange"/>
     </view>
   </view>
 </view>
@@ -904,7 +905,7 @@
 <view class="weui-cells weui-cells_form">
   <view class="weui-cell">
     <view class="weui-cell__bd">
-      <textarea class="weui-textarea" placeholder="请输入自我评价" rows="3" name="selfEvaluation"></textarea>
+      <textarea class="weui-textarea" placeholder="请输入自我评价" rows="3" name="selfEvaluation" data-field="selfEvaluation" bindinput="handleInputChange"></textarea>
     </view>
   </view>
 </view>
@@ -914,8 +915,6 @@
   <view class="weui-cell weui-check__item">
     <view class="weui-cell__bd">
       <view class="weui-cell__hd">
-        <checkbox class="weui-check" name="declaration"></checkbox>
-        <i class="weui-icon-checked"></i>
       </view>
       <view class="weui-cell__bd">
         <p>本人承诺对以上内容的真实性负责，并愿意接受公司对表中内容进行调查，并且本人保证，没有犯罪，吸毒等不良历史记录，如有隐瞒或造假愿接受招聘方的任何处理。</p>
@@ -923,6 +922,7 @@
     </view>
   </view>
 </view>
+
 
 
 <view class="weui-panel weui-panel_access">
@@ -956,5 +956,5 @@
 </view>
 
   </form>
-  <modal hidden="{{!isSubmitted}}" title="提示" content="提交成功!" confirmText="确定" bindconfirm="clearForm"></modal>
+
 </view>
