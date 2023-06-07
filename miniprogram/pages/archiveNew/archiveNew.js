@@ -85,6 +85,66 @@ Page({
         'form.birthdate': e.detail.value
       });
     },
+    bindEduStartDate1: function(e) {
+      this.setData({
+        'form.EduStartDate1': e.detail.value
+      });
+    },
+    bindEduEndDate1: function(e) {
+      this.setData({
+        'form.EduEndDate1': e.detail.value
+      });
+    },
+    bindEduStartDate2: function(e) {
+      this.setData({
+        'form.EduStartDate2': e.detail.value
+      });
+    },
+    bindEduEndDate2: function(e) {
+      this.setData({
+        'form.EduEndDate2': e.detail.value
+      });
+    },
+    bindWorkStartDate1: function(e) {
+      this.setData({
+        'form.WorkStartDate1': e.detail.value
+      });
+    },
+    bindWorkEndDate1: function(e) {
+      this.setData({
+        'form.WorkEndDate1': e.detail.value
+      });
+    },
+    bindWorkStartDate2: function(e) {
+      this.setData({
+        'form.WorkStartDate2': e.detail.value
+      });
+    },
+    bindWorkEndDate2: function(e) {
+      this.setData({
+        'form.WorkEndDate2': e.detail.value
+      });
+    },
+    bindWorkStartDate3: function(e) {
+      this.setData({
+        'form.WorkStartDate3': e.detail.value
+      });
+    },
+    bindWorkEndDate3: function(e) {
+      this.setData({
+        'form.WorkEndDate3': e.detail.value
+      });
+    },
+    bindWorkStartDate4: function(e) {
+      this.setData({
+        'form.WorkStartDate4': e.detail.value
+      });
+    },
+    bindWorkEndDate4: function(e) {
+      this.setData({
+        'form.WorkEndDate4': e.detail.value
+      });
+    },
     genderChange(e) {
       this.setData({
         'form.genderIndex': e.detail.value,

@@ -497,8 +497,10 @@
       <label class="weui-label">开始日期1：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="date" name="education1StartDate" placeholder="请输入开始日期"/>
-    </view> <!-- Picker -->
+      <picker mode="date" bindchange="bindEduStartDate1">
+        <view class="weui-input">{{form.EduStartDate1}}</view>
+      </picker>
+    </view>
   </view>
   <view class="weui-cell">
     <view class="weui-cell__hd">
@@ -506,7 +508,9 @@
       <!-- Picker -->
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="date" name="education1EndDate" placeholder="请输入结束日期"/>
+      <picker mode="date" bindchange="bindEduEndDate1">
+        <view class="weui-input">{{form.EduEndDate1}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell">
@@ -552,7 +556,9 @@
       <label class="weui-label">开始日期2：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="date" name="education2StartDate" placeholder="请输入开始日期"/>
+      <picker mode="date" bindchange="bindEduStartDate2">
+        <view class="weui-input">{{form.EduStartDate2}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell">
@@ -560,7 +566,9 @@
       <label class="weui-label">结束日期2：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="date" name="education2EndDate" placeholder="请输入结束日期"/>
+      <picker mode="date" bindchange="bindEduEndDate2">
+        <view class="weui-input">{{form.EduEndDate2}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell">
@@ -606,7 +614,9 @@
       <label class="weui-label">工作经历1开始日期：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="date" name="work1StartDate" placeholder="请输入开始日期" />
+      <picker mode="date" bindchange="bindWorkStartDate1">
+        <view class="weui-input">{{form.WorkStartDate1}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell">
@@ -614,7 +624,9 @@
       <label class="weui-label">工作经历1结束日期：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="date" name="work1EndDate" placeholder="请输入结束日期"/>
+      <picker mode="date" bindchange="bindWorkEndDate1">
+        <view class="weui-input">{{form.WorkEndDate1}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell">
@@ -681,7 +693,9 @@
       <label class="weui-label">工作经历2开始日期：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="date" name="work2StartDate" placeholder="请输入开始日期"/>
+      <picker mode="date" bindchange="bindWorkStartDate2">
+        <view class="weui-input">{{form.WorkStartDate2}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell">
@@ -689,7 +703,9 @@
       <label class="weui-label">工作经历2结束日期：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="date" name="work2EndDate" placeholder="请输入结束日期"/>
+      <picker mode="date" bindchange="bindWorkEndDate2">
+        <view class="weui-input">{{form.WorkEndDate2}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell">
@@ -756,7 +772,9 @@
       <label class="weui-label">工作经历3开始日期：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="date" name="work3StartDate" placeholder="请输入开始日期"/>
+      <picker mode="date" bindchange="bindWorkStartDate3">
+        <view class="weui-input">{{form.WorkStartDate3}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell">
@@ -764,7 +782,9 @@
       <label class="weui-label">工作经历3结束日期：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="date" name="work3EndDate" placeholder="请输入结束日期"/>
+      <picker mode="date" bindchange="bindWorkEndDate3">
+        <view class="weui-input">{{form.WorkEndDate3}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell">
@@ -834,7 +854,9 @@
       <label class="weui-label">工作经历4开始日期：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="date" name="work4StartDate" placeholder="请输入开始日期"/>
+      <picker mode="date" bindchange="bindWorkStartDate4">
+        <view class="weui-input">{{form.WorkStartDate4}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell">
@@ -842,7 +864,9 @@
       <label class="weui-label">工作经历4结束日期：</label>
     </view>
     <view class="weui-cell__bd">
-      <input class="weui-input" type="date" name="work4EndDate" placeholder="请输入结束日期"/>
+      <picker mode="date" bindchange="bindWorkEndDate4">
+        <view class="weui-input">{{form.WorkEndDate4}}</view>
+      </picker>
     </view>
   </view>
   <view class="weui-cell">
