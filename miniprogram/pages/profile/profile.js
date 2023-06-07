@@ -7,6 +7,7 @@ Page({
   data: {
       openid:'',
       role:'',
+      
   }, 
 
   /**
@@ -18,12 +19,15 @@ Page({
       name: 'login',
       complete: res => {
         console.log('callFunction test result: ', res);
-        let role = that.getRole();
+
         that.setData({
           openid: res.result.OPENID,
           role: res.result.ROLE,
         });
-        
+  
+        //设置全局变量role
+        getApp().globalData.role = that.data.role;
+        console.log(getApp().globalData.role);
       }
      
     });

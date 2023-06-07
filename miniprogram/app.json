@@ -1,30 +1,35 @@
 {
-  "pages":[
+  "pages": [
     "pages/profile/profile",
     "pages/archiveNew/archiveNew",
-    "pages/archivePublic/archivePublic"
-    
+    "pages/archivePublic/archivePublic",
+    "pages/detail",
+    "pages/archiveDetail/archiveDetail"
   ],
   "useExtendedLib": {
     "kbone": true,
     "weui": true
   },
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "爱乐盟人才库",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/archivePublic/archivePublic",
-      "text": "档案公开"
-    }, {
-      "pagePath": "pages/archiveNew/archiveNew",
-      "text": "档案新建"
-    }, {
-      "pagePath": "pages/profile/profile",
-      "text": "鉴权中心"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/archivePublic/archivePublic",
+        "text": "档案公开"
+      },
+      {
+        "pagePath": "pages/archiveNew/archiveNew",
+        "text": "档案新建"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "鉴权中心"
+      }
+    ]
   }
 }

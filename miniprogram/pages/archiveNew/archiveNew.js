@@ -4,15 +4,15 @@ Page({
       // 预留上传至云函数
       form: {
         declarationChecked: false,
-       
+        imgUrl: '',
       },
       // 签名预留variable，预计也要部分传入form
-      imgUrl: '',
       context1: null,
       hasDraw:false, //默认没有画
       src:null,
       avatar:'',
       // 预留选项
+      educationTypes: ['统招', '自考', '成人'],
       genderArray: ['男', '女'],
       IDtypes: ['身份证', '驾照', '护照', '其他'],
       householdNatures: ['农', '非农'],
@@ -35,7 +35,7 @@ Page({
     handleSupportDeploymentChange(e) {
       const { value } = e.detail;
       this.setData({
-        currentSupportDeployment: this.data.supportDeployments[value]
+        'form.currentSupportDeployment': this.data.supportDeployments[value]
       });
     }, 
     handleAvailabilityChange: function(e) {
@@ -47,26 +47,37 @@ Page({
     handleCanDriveChange(e) {
       const { value } = e.detail;
       this.setData({
-        currentCanDrive: this.data.canDrives[value]
+        'form.currentCanDrive': this.data.canDrives[value]
       });
     },
- 
+    education1TypeChange(e) {
+      const { value } = e.detail;
+      this.setData({
+        'form.education1Type': this.data.educationTypes[value]
+      });
+    },
+    education2TypeChange(e) {
+      const { value } = e.detail;
+      this.setData({
+        'form.education2Type': this.data.educationTypes[value]
+      });
+    },
     handleHasChildChange(e) {
       const { value } = e.detail;
       this.setData({
-        currentHasChild: this.data.hasChilds[value]
+        'form.currentHasChild': this.data.hasChilds[value]
       });
     },
     handleHouseholdNatureChange(e) {
       const { value } = e.detail;
       this.setData({
-        currentHouseholdNature: this.data.householdNatures[value]
+        'form.currentHouseholdNature': this.data.householdNatures[value]
       });
     },
     handlePickerChange(e) {
       const { value } = e.detail;
       this.setData({
-        currentIDtype: this.data.IDtypes[value]
+        'form.currentIDtype': this.data.IDtypes[value]
       });
     },
     bindBirthChange: function(e) {
@@ -191,7 +202,7 @@ Page({
     
             // 上传文件到云存储
             wx.cloud.uploadFile({
-              cloudPath: 'your/path/' + new Date().getTime() + '.png', // 这里请按你的需求自定义路径和文件名
+              cloudPath: 'archive/sign/' + new Date().getTime() + '.png', // 这里请按你的需求自定义路径和文件名
               filePath: that.data.src,
               success: res => {
                 console.log('[上传文件] 成功：', res)
@@ -204,7 +215,7 @@ Page({
                 that.setData({
                   'form.signature': res.fileID
                 })
-                  
+
               },
               fail: err => {
                 wx.showToast({
@@ -243,7 +254,7 @@ Page({
                       })
   
                       that.setData({
-                          imgUrl: res.fileID
+                          'form.imgUrl': res.fileID
                       })
                   },
                   fail: err => {

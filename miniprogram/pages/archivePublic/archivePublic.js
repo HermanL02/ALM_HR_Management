@@ -4,6 +4,7 @@ Page({
   },
 
   onLoad: function() {
+    console.log( getApp().globalData.role);
     this.fetchUsers();
   },
 
@@ -25,5 +26,15 @@ Page({
         console.log('Error fetching users:', res);
       }
     });
-  }
+  },
+  // 查看员工详情
+  navigateToDetail: function (event) {
+    // Get _id from event.currentTarget.dataset
+    const id = event.currentTarget.dataset.id;
+console.log(id);
+    // Navigate to employeeDetail page with _id as a parameter
+    wx.navigateTo({
+      url: `/pages/archiveDetail/archiveDetail?id=${id}`,
+    });
+  },
 });

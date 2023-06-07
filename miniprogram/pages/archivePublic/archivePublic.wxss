@@ -1,0 +1,9 @@
+.cell-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.weui-input {
+  border: 1px solid #ccc; /* 定义1像素宽的灰色边框 */
+  border-radius: 4px; /* 可选：为边框添加一些圆角 */
+}

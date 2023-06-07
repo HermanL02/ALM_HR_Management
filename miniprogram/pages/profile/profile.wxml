@@ -1,6 +1,22 @@
 <!--pages/profile/profile.wxml-->
+<view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">用户信息</view>
+    <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+            <view class="weui-media-box__hd">
 
-<view>微信统一Open ID: {{openid}}</view>
-<view>鉴权: {{role}}</view>
-<button bindtap="copyOpenId">复制Open ID</button>
-
+            </view>
+            <view class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">微信统一Open ID</h4>
+                <p class="weui-media-box__desc">{{openid}}</p>
+            </view>
+        </view>
+        <view class="weui-media-box weui-media-box_text">
+            <h4 class="weui-media-box__title">鉴权</h4>
+            <p class="weui-media-box__desc">{{role}}</p>
+        </view>
+    </view>
+</view>
+<view class="button-sp-area">
+    <button bindtap="copyOpenId" class="weui-btn weui-btn_primary">复制Open ID</button>
+</view>
