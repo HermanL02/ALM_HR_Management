@@ -3,7 +3,6 @@
     "pages/profile/profile",
     "pages/archiveNew/archiveNew",
     "pages/archivePublic/archivePublic",
-    "pages/detail",
     "pages/archiveDetail/archiveDetail"
   ],
   "useExtendedLib": {
