@@ -4,7 +4,20 @@
     <mp-searchbar> type="text" placeholder="Search" class="weui-input" bindinput="bindSearchInput" </mp-searchbar>
     <button class="weui-btn weui-btn_primary" bindtap="onSearchTap">搜索</button>
   </view>
-
+  <!-- Title Bar -->
+  <!-- <view class="weui-cells title-bar">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <text>名字</text>
+      </view>
+      <view class="weui-cell__bd">
+        <text>生日</text>
+      </view>
+      <view class="weui-cell__ft">
+        <text>查看更多</text>
+      </view>
+    </view>
+  </view> -->
   <!-- Employees List -->
   <view class="list" wx:for="{{employees}}" wx:key="_id">
     <view class="weui-cells">

@@ -14,6 +14,9 @@ Page({
   },
 
   fetchUsers: function() {
+    wx.showLoading({
+      title: '正在加载...',
+    });
     let that = this;
     wx.cloud.callFunction({
       name: 'getArchive',
@@ -22,9 +25,11 @@ Page({
         that.setData({
           employees: res.result.data
         });
+        wx.hideLoading();
       },
       fail: function(res) {
         console.log('Error fetching users:', res);
+        wx.hideLoading();
       }
     });
   },
