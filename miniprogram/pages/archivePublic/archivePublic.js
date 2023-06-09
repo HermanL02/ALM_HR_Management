@@ -8,8 +8,9 @@ Page({
     this.fetchUsers();
   },
 
-  onshow: function(){
-    this.onLoad();
+  onShow: function(){
+    console.log( getApp().globalData.role);
+    this.fetchUsers();
   },
 
   fetchUsers: function() {
