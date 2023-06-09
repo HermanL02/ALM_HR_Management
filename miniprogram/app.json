@@ -3,7 +3,8 @@
     "pages/profile/profile",
     "pages/archiveNew/archiveNew",
     "pages/archivePublic/archivePublic",
-    "pages/archiveDetail/archiveDetail"
+    "pages/archiveDetail/archiveDetail",
+    "pages/archiveOverview/archiveOverview"
   ],
   "useExtendedLib": {
     "kbone": true,

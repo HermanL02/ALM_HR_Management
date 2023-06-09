@@ -28,13 +28,13 @@ Page({
     });
   },
   // 查看员工详情
-  navigateToDetail: function (event) {
+  navigateToOverview: function (event) {
     // Get _id from event.currentTarget.dataset
     const id = event.currentTarget.dataset.id;
-console.log(id);
+    console.log(id);
     // Navigate to employeeDetail page with _id as a parameter
     wx.navigateTo({
-      url: `/pages/archiveDetail/archiveDetail?id=${id}`,
+      url: `/pages/archiveOverview/archiveOverview?id=${id}`,
     });
   },
 });

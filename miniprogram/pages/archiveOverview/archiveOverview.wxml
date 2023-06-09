@@ -1,0 +1,38 @@
+<!--pages/archiveOverview/archiveOverview.wxml-->
+<view class="weui-cells">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <text>姓名：{{form.name}}</text>
+    </view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <text>生日：{{form.birthdate}}</text>
+    </view>
+  </view>
+</view>
+<button class="weui-btn weui-btn_mini weui-btn_default" bindtap="navigateToDetail" data-id="{{id}}">查看资料</button>
+<view class="weui-panel weui-panel_access">
+  <view class="weui-panel__hd">评论</view>
+  <view class="weui-panel__bd">
+    <block wx:for="{{form.reviews}}" wx:key="*this">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__desc">{{item.content}}</view>
+        <view class="weui-media-box__info">
+          <text class="weui-media-box__info__meta">评论人：{{item.reviewer}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class="weui-cells__title">添加评论</view>
+<view class="weui-cells weui-cells_form">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea class="weui-textarea" placeholder="请输入评论" bindinput="handleCommentInput"></textarea>
+    </view>
+  </view>
+</view>
+<button class="weui-btn weui-btn_primary" bindtap="submitComment">提交新评价</button>
+
