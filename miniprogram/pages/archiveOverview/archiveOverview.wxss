@@ -1,1 +1,20 @@
-/* pages/archiveOverview/archiveOverview.wxss */
+.custom-box {
+  padding: 10px;
+  margin: 10px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+}
+
+.custom-box__desc {
+  font-size: 14px;
+  color: #333;
+}
+
+.custom-box__info {
+  margin-top: 10px;
+}
+
+.custom-box__info__meta {
+  font-size: 12px;
+  color: #999;
+}

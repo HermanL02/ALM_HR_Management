@@ -15,14 +15,16 @@
 <view class="weui-panel weui-panel_access">
   <view class="weui-panel__hd">评论</view>
   <view class="weui-panel__bd">
-    <block wx:for="{{form.reviews}}" wx:key="*this">
-      <view class="weui-media-box weui-media-box_text">
-        <view class="weui-media-box__desc">{{item.content}}</view>
-        <view class="weui-media-box__info">
-          <text class="weui-media-box__info__meta">评论人：{{item.reviewer}}</text>
-        </view>
-      </view>
-    </block>
+<block wx:for="{{form.reviews}}" wx:key="*this">
+  <view class="custom-box">
+    <view class="custom-box__info">
+      <text class="custom-box__info__meta">openid: {{item.openid}}</text>
+    </view>
+    <view class="custom-box__desc">{{item.content}}</view>
+
+  </view>
+</block>
+
   </view>
 </view>
 
@@ -30,7 +32,8 @@
 <view class="weui-cells weui-cells_form">
   <view class="weui-cell">
     <view class="weui-cell__bd">
-      <textarea class="weui-textarea" placeholder="请输入评论" bindinput="handleCommentInput"></textarea>
+      <textarea class="weui-textarea" placeholder="请输入评论" value="{{newComment}}" bindinput="handleCommentInput"></textarea>
+
     </view>
   </view>
 </view>

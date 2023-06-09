@@ -84,6 +84,12 @@ Page({
             icon: 'none',
             duration: 2000
           });
+        }else{
+          // 临时显示这条评论 (与后台实际脱钩) 同时删除输入框内内容
+          let newReviews = this.data.form.reviews;
+          newReviews.push({ content: this.data.newComment, openid: '当前用户的openid' });
+          this.setData({ 'form.reviews': newReviews, 'newComment': '' });
+          //
         }
       },
       fail: err => {
