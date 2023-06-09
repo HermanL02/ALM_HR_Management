@@ -7,14 +7,17 @@ Page({
   data: {
     form:{
 
-    }
-
+    },
+    role:'',
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    this.setData({
+      role: getApp().globalData.role
+    });
     // Get _id from options
     const id = options.id;
     // Set _id as page data
@@ -62,6 +65,7 @@ Page({
       newComment: e.detail.value
     });
   },
+  // 提交评价
   submitComment: function() {
     wx.cloud.callFunction({
       name: 'addReview',
@@ -97,5 +101,50 @@ Page({
       }
     });
   },
+  //删除档案
+  deleteArchive: function(e) {
+    const id = e.currentTarget.dataset.id;
+    wx.showModal({
+      title: '确认',
+      content: '确定要删除这个档案吗?',
+      success: function(res) {
+        if (res.confirm) {
+          // 用户点击了确认
+          wx.cloud.callFunction({
+            name: 'deleteArchive',
+            data: {
+              id: id
+            },
+            success: function(res) {
+              // 检查云函数返回的状态
+              if (res.result.status === 'success') {
+                // 如果删除成功，返回上一页
+                wx.navigateBack({
+                  delta: 1
+                });
+              } else {
+                // 如果删除失败，显示一个toast
+                wx.showToast({
+                  title: '删除失败，请重试',
+                  icon: 'none',
+                  duration: 2000
+                });
+              }
+            },
+            fail: function(err) {
+              // 如果云函数调用失败，显示一个toast
+              wx.showToast({
+                title: '删除失败，请重试',
+                icon: 'none',
+                duration: 2000
+              });
+            }
+          })
+        } else if (res.cancel) {
+          // 用户点击了取消
+        }
+      }
+    })
+  }
   
 })

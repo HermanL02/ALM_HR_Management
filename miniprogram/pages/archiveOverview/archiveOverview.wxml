@@ -11,7 +11,12 @@
     </view>
   </view>
 </view>
-<button class="weui-btn weui-btn_mini weui-btn_default" bindtap="navigateToDetail" data-id="{{id}}">查看资料</button>
+<button class="weui-btn weui-btn_mini weui-btn_default" bindtap="navigateToDetail" data-id="{{id}}" wx:if="{{role !== 'admin' && role !== 'viceadmin'}}">查看资料</button>
+<button class="weui-btn weui-btn_mini weui-btn_default" bindtap="navigateToDetail" data-id="{{id}}" wx:else>查看和修改资料</button>
+
+
+<button class="weui-btn weui-btn_mini weui-btn_warn" bindtap="deleteArchive" data-id="{{id}}">删除档案</button>
+
 <view class="weui-panel weui-panel_access">
   <view class="weui-panel__hd">评论</view>
   <view class="weui-panel__bd">
