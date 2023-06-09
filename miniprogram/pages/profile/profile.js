@@ -51,11 +51,7 @@ Page({
 },
 
   // Todo: 需要设置getRole
-  getRole: function() {
-    console.log("鉴权中...");
-      return '用户';
-    
-  },
+
   /**
    * Lifecycle function--Called when page is initially rendered
    */

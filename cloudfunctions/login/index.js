@@ -12,7 +12,10 @@ exports.main = async (event, context) => {
   const admins = await db.collection('admin').where({
     _openid: OPENID
   }).get()
-  const ROLE = admins.data.length > 0 ? 'admin' : 'user'
+  let ROLE = 'user';
+  if(admins.data.length > 0){
+    ROLE = admins.data[0].role || 'user'; // 从数据库中读取role，如果不存在则默认为'user'
+  }
   return {
     OPENID,
     APPID,
@@ -20,3 +23,4 @@ exports.main = async (event, context) => {
     ROLE,
   }
 }
+
