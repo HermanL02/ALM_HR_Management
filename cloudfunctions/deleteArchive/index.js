@@ -4,6 +4,7 @@ const cloud = require('wx-server-sdk')
 cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV }) // 使用当前云环境
 
 exports.main = async (event, context) => {
+  const { OPENID } = cloud.getWXContext() // 获取操作者的openid
   const db = cloud.database()
   try {
     // 先从原集合中读取这个档案的数据
@@ -18,9 +19,17 @@ exports.main = async (event, context) => {
       data: archiveData
     })
 
+    // 向"log"集合中添加操作日志
+    await db.collection('log').add({
+      data: {
+        operator: OPENID,
+        archiveID: event.id,
+        operation: 'Delete'
+      }
+    })
+
     return { status: 'success' }
   } catch (err) {
     return { status: 'error', error: err }
   }
 }
-
