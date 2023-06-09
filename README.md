@@ -1,3 +1,15 @@
+# Author: Herman 梁逸群
+# Purpose: 
+To manage the human resource of Shenyang Ailemeng Group Company
+
+# Why Wechat miniprogram? 
+It is a cross-platform, Chinese-based, well-known and safe platform.
+
+# Database info:
+The databased contains admin, archive, log, and (verify)
+
+# Cloudfunction info
+
 # 云开发 quickstart
 
 这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
