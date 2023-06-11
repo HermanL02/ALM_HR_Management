@@ -27,6 +27,7 @@ Page({
   
         //设置全局变量role
         getApp().globalData.role = that.data.role;
+        getApp().globalData.openid = that.data.openid;
         console.log(getApp().globalData.role);
       }
      

@@ -23,5 +23,5 @@ exports.main = async (event, context) => {
       data: acc.data.concat(cur.data),
       errMsg: acc.errMsg,
     }
-  })
+  }, {data: [], errMsg: ''}) // Here is the initial value for the reduce function
 }
