@@ -1,0 +1,11 @@
+<view class="employee-details">
+  <view wx:if="{{message}}">
+    <text>{{message}}</text>
+  </view>
+
+  <button wx:if="{{!onboardButton.exists}}" bindtap="createOnboardReview">{{onboardButton.label}}</button>
+  <button wx:else bindtap="viewOnboardReview">{{onboardButton.label}}</button>
+
+  <button wx:if="{{!offboardButton.exists}}" bindtap="createOffboardReview">{{offboardButton.label}}</button>
+  <button wx:else bindtap="viewOffboardReview">{{offboardButton.label}}</button>
+</view>

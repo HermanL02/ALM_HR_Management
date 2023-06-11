@@ -56,6 +56,24 @@ Page({
         'form.education1Type': this.data.educationTypes[value]
       });
     },
+    confirmSubmit: function(e) {
+      let self = this;
+      wx.showModal({
+        title: '确认',
+        content: '你确认同意沈阳爱乐盟工程顾问有限公司收集你的信息吗？信息将用作入职申请和人才共享',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定');
+            // 如果用户点击确定，你可以在这里提交表单
+            self.submitForm();
+          } else if (res.cancel) {
+            console.log('用户点击取消');
+            // 如果用户点击取消，你可以在这里做一些清理工作
+            // 比如重置表单
+          }
+        }
+      })
+    },
     education2TypeChange(e) {
       const { value } = e.detail;
       this.setData({

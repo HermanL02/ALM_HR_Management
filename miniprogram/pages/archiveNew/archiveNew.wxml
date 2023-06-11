@@ -1,6 +1,7 @@
 <!-- archiveNew.wxml -->
 <view class="container">
-  <form bindsubmit="submitForm">
+  <view class="weui-cells__title">沈阳爱乐盟工程顾问有限公司员工入职表</view>
+  <form>
     <view class="weui-cells__title">上传头像</view>
 <view class="weui-cells weui-cells_form" style="display: flex; justify-content: center;">
   <view class="weui-cell">
@@ -977,7 +978,7 @@
 </view>
 
 <view class="weui-btn-area">
-  <button class="weui-btn weui-btn_primary" formType="submit">提交</button>
+  <button class="weui-btn weui-btn_primary" bindtap="confirmSubmit">提交</button>
 </view>
 
   </form>

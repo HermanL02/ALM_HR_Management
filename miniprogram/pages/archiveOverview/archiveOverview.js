@@ -145,6 +145,18 @@ Page({
         }
       }
     })
-  }
+  },
+
+  // 查看入职离职评价
+  navigateToLeaderReview: function (event) {
+    // Get _id from event.currentTarget.dataset
+    const id = event.currentTarget.dataset.id;
+    console.log(id);
+    // Navigate to review page with _id as a parameter
+    wx.navigateTo({
+      url: `/pages/leaderReview/leaderReview?id=${id}`,
+    });
+  },
+  
   
 })

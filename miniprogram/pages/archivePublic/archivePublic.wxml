@@ -30,7 +30,7 @@
         <view class="weui-cell__ft">
         <!-- Pass item._id to navigateToDetail function -->
       <button class="weui-btn weui-btn_mini weui-btn_default" bindtap="navigateToOverview" data-id="{{item._id}}">查看更多</button>
-
+    
         </view>
       </view>
     </view>
