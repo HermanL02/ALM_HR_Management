@@ -13,6 +13,19 @@ Page({
 
     this.fetchLeaderReviewDetails(id);
   },
+  createOnboardReview: function(e) {
+    const id = this.data.id; // 你需要根据实际情况获取id的值
+    wx.navigateTo({
+        url: `/pages/onoffboardNew/onoffboardNew?id=${id}&type=0`,
+    });
+},
+
+    createOffboardReview: function(e) {
+        const id = this.data.id; // 你需要根据实际情况获取id的值
+        wx.navigateTo({
+            url: `/pages/onoffboardNew/onoffboardNew?id=${id}&type=1`,
+        });
+    },
 
   fetchLeaderReviewDetails: function(id) {
     wx.cloud.callFunction({
@@ -27,7 +40,7 @@ Page({
         let hasLeaderReview = res.result.leaderReview ? true : false;
         let hasOnboardReview = hasLeaderReview && res.result.leaderReview.onboardReview ? true : false;
         let hasOffboardReview = hasLeaderReview && res.result.leaderReview.offboardReview ? true : false;
-  
+        
         // 根据条件更新界面元素
         if (!hasLeaderReview) {
           this.setData({

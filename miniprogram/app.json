@@ -5,7 +5,8 @@
     "pages/archivePublic/archivePublic",
     "pages/archiveDetail/archiveDetail",
     "pages/archiveOverview/archiveOverview",
-    "pages/leaderReview/leaderReview"
+    "pages/leaderReview/leaderReview",
+    "pages/onoffboardNew/onoffboardNew"
   ],
   "useExtendedLib": {
     "kbone": true,
