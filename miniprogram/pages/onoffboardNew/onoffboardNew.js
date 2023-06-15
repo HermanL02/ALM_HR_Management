@@ -1,5 +1,13 @@
 // /pages/onoffboardNew/onoffboardNew.js
 Page({
+  data: {
+    form:{
+
+    },
+    firstReview:{
+
+    },
+  },
   onLoad: function (options) {
       console.log(options);
       // id 和 type 通过 url 参数传入，将会在 options 对象中
@@ -20,6 +28,12 @@ Page({
       that.setData({
         date: year + '-' + month + '-' + day
       });
+      // Set archive id
+      that.setData({
+        id: id,
+        type:type,
+      });
+
       console.log("id: ", id);
       console.log("type: ", type);
   },
@@ -27,7 +41,7 @@ Page({
   inputChange(e) {
     const { field } = e.currentTarget.dataset;
     this.setData({
-      [field]: e.detail.value,
+      [`form.${field}`]: e.detail.value,
     });
   },
 
@@ -35,17 +49,28 @@ Page({
   radioChange(e) {
     const { field } = e.currentTarget.dataset;
     this.setData({
-      [field]: e.detail.value,
+      [`form.${field}`]: e.detail.value,
     });
   },
+ 
+  // 初始建议 Radio Change
 
   // 提交
   submit() {
-    that.setData({
-      timestamp: timestamp
-    });
     console.log(this.data);
     // 处理提交逻辑...
+    wx.cloud.callFunction({
+      name: 'addOnOffBoard',
+      data: {
+        id: this.data.id,
+        type: Number(this.data.type),
+        form: this.data.form
+      },
+    })
+    .then(res => {
+      console.log(res.result)  // 输出云函数返回结果
+    })
+    .catch(console.error)  // 打印错误信息
   },
 
 });

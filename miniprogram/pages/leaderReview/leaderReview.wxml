@@ -1,11 +1,23 @@
-<view class="employee-details">
-  <view wx:if="{{message}}">
+<view class="weui-cells employee-details">
+  <view wx:if="{{message}}" class="weui-cells__title">
     <text>{{message}}</text>
   </view>
 
-  <button wx:if="{{!onboardButton.exists}}" bindtap="createOnboardReview">{{onboardButton.label}}</button>
-  <button wx:else bindtap="viewOnboardReview">{{onboardButton.label}}</button>
+  <view class="weui-cells__item">
+    <view wx:if="{{!onboardButton.exists}}" class="weui-btn weui-btn_primary" bindtap="createOnboardReview">
+      <text>{{onboardButton.label}}</text>
+    </view>
+    <view wx:else class="weui-btn weui-btn_primary" bindtap="viewOnboardReview">
+      <text>{{onboardButton.label}}</text>
+    </view>
+  </view>
 
-  <button wx:if="{{!offboardButton.exists}}" bindtap="createOffboardReview">{{offboardButton.label}}</button>
-  <button wx:else bindtap="viewOffboardReview">{{offboardButton.label}}</button>
+  <view class="weui-cells__item">
+    <view wx:if="{{!offboardButton.exists}}" class="weui-btn weui-btn_primary" bindtap="createOffboardReview">
+      <text>{{offboardButton.label}}</text>
+    </view>
+    <view wx:else class="weui-btn weui-btn_primary" bindtap="viewOffboardReview">
+      <text>{{offboardButton.label}}</text>
+    </view>
+  </view>
 </view>
