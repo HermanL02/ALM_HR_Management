@@ -4,7 +4,7 @@ Page({
     form:{
 
     },
-    firstReview:{
+    review:{
 
     },
   },
@@ -54,7 +54,13 @@ Page({
   },
  
   // 初始建议 Radio Change
-
+  reviewRadioChange(e) {
+    const { field } = e.currentTarget.dataset;
+    console.log(this.data);
+    this.setData({
+      [`review.${field}`]: e.detail.value,
+    });
+  },
   // 提交
   submit() {
     console.log(this.data);
@@ -71,6 +77,20 @@ Page({
       console.log(res.result)  // 输出云函数返回结果
     })
     .catch(console.error)  // 打印错误信息
+    console.log( this.data.review);
+    wx.cloud.callFunction({
+      name: 'interviewReview',
+      data: {
+        id: this.data.id,
+        type: Number('0'),
+        review: this.data.review
+      },
+    })
+    .then(res => {
+      console.log(res.result)  // 输出云函数返回结果
+    })
+    .catch(console.error)  // 打印错误信息
+
   },
 
 });

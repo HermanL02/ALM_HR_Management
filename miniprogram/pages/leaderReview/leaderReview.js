@@ -26,6 +26,12 @@ Page({
             url: `/pages/onoffboardNew/onoffboardNew?id=${id}&type=1`,
         });
     },
+// Date to string
+dateToString: function (timestamp) {
+  const date = new Date(timestamp);
+  return date.toLocaleDateString();
+},
+//
 
   fetchLeaderReviewDetails: function(id) {
     wx.cloud.callFunction({
@@ -36,11 +42,30 @@ Page({
       success: res => {
         console.log('form:', res.result);
   
-        // 判断存在条件
+        // 判断存在条件，屎山代码
         let hasLeaderReview = res.result.leaderReview ? true : false;
         let hasOnboardReview = hasLeaderReview && res.result.leaderReview.onboardReview ? true : false;
         let hasOffboardReview = hasLeaderReview && res.result.leaderReview.offboardReview ? true : false;
-        
+        let hasfirstReview = res.result.leaderReview.firstReview ? true : false;
+        let firstReview = hasfirstReview ? res.result.leaderReview.firstReview : null;
+        let firstReviewDateString = hasfirstReview ? this.dateToString(firstReview.date) : null;
+        let hassecondReview = res.result.leaderReview.secondReview ? true : false;
+        let secondReview = hassecondReview ? res.result.leaderReview.secondReview : null;
+        let secondReviewDateString = hassecondReview ? this.dateToString(secondReview.date) : null;
+        let hasthirdReview = res.result.leaderReview.thirdReview ? true : false;
+        let thirdReview = hasthirdReview ? res.result.leaderReview.thirdReview : null;
+        let thirdReviewDateString = hasthirdReview ? this.dateToString(thirdReview.date) : null;
+        this.setData({
+          hasfirstReview,
+          firstReview,
+          hassecondReview,
+          secondReview,
+          hasthirdReview,
+          thirdReview,
+          firstReviewDateString,
+          secondReviewDateString,
+          thirdReviewDateString
+        })
         // 根据条件更新界面元素
         if (!hasLeaderReview) {
           this.setData({

@@ -226,7 +226,7 @@
 </view>
 
 <view class="weui-cells__title">初试建议：</view>
-<radio-group class="radio-group" bindchange="radioChange" data-field="recommendation">
+<radio-group class="radio-group" bindchange="reviewRadioChange" data-field="recommendation">
     <label>
         <radio value="试用" checked="{{recommendation == '试用'}}"/> 拟予试用
     </label>

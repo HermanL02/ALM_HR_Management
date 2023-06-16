@@ -11,6 +11,46 @@
       <text>{{onboardButton.label}}</text>
     </view>
   </view>
+  
+
+  <view class="weui-cell" wx:if="{{hasfirstReview}}">
+    <view class="weui-cell__bd">
+      <text>初面建议</text>
+    </view>
+    <view class="weui-cell__bd">
+      <text>{{firstReview.recommendation}}</text>
+    </view>
+    <view class="weui-cell__ft">
+      <text>{{firstReviewDateString}}</text>
+    </view>
+  </view>
+
+  <view class="weui-cell" wx:if="{{hassecondReview}}">
+    <view class="weui-cell__bd">
+      <text>二面建议</text>
+    </view>
+    <view class="weui-cell__bd">
+      <text>{{secondReview.recommendation}}</text>
+    </view>
+    <view class="weui-cell__ft">
+      <text>{{secondReviewDateString}}</text>
+    </view>
+
+  </view>
+  
+
+
+  <view class="weui-cell" wx:if="{{hasthirdReview}}">
+    <view class="weui-cell__bd">
+      <text>终面建议</text>
+    </view>
+    <view class="weui-cell__bd">
+      <text>{{thirdReview.recommendation}}</text>
+    </view>
+    <view class="weui-cell__ft">
+      <text>{{thirdReviewDateString}}</text>
+    </view>
+  </view>
 
   <view class="weui-cells__item">
     <view wx:if="{{!offboardButton.exists}}" class="weui-btn weui-btn_primary" bindtap="createOffboardReview">
