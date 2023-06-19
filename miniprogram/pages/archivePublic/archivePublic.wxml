@@ -3,6 +3,11 @@
   <view class="search-bar">
     <mp-searchbar> type="text" placeholder="Search" class="weui-input" bindinput="bindSearchInput" </mp-searchbar>
     <button class="weui-btn weui-btn_primary" bindtap="onSearchTap">搜索</button>
+    <view class="notification-bar">
+      <view class="weui-textarea">
+      <text>小程序仅供公司内部与合作伙伴使用，严格保护用户隐私，不对外部开放</text>
+    </view>
+  </view>
   </view>
   <!-- Title Bar -->
   <!-- <view class="weui-cells title-bar">

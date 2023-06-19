@@ -7,13 +7,11 @@
     <view wx:if="{{!onboardButton.exists}}" class="weui-btn weui-btn_primary" bindtap="createOnboardReview">
       <text>{{onboardButton.label}}</text>
     </view>
-    <view wx:else class="weui-btn weui-btn_primary" bindtap="viewOnboardReview">
+    <view wx:else>
+    <view class="weui-btn weui-btn_primary" bindtap="viewOnboardReview">
       <text>{{onboardButton.label}}</text>
     </view>
-  </view>
-  
-
-  <view class="weui-cell" wx:if="{{hasfirstReview}}">
+    <view class="weui-cell" wx:if="{{hasfirstReview}}">
     <view class="weui-cell__bd">
       <text>初面建议</text>
     </view>
@@ -37,7 +35,9 @@
     </view>
 
   </view>
-  
+<view class="weui-cell" wx:else>
+  <button bindtap="addSecondReview">添加二面建议</button>
+</view>
 
 
   <view class="weui-cell" wx:if="{{hasthirdReview}}">
@@ -51,7 +51,14 @@
       <text>{{thirdReviewDateString}}</text>
     </view>
   </view>
+  <view class="weui-cell" wx:else>
+  <button bindtap="addThirdReview">添加终面建议</button>
+</view>
+  </view>
+  </view>
+  
 
+  
   <view class="weui-cells__item">
     <view wx:if="{{!offboardButton.exists}}" class="weui-btn weui-btn_primary" bindtap="createOffboardReview">
       <text>{{offboardButton.label}}</text>

@@ -31,9 +31,29 @@ dateToString: function (timestamp) {
   const date = new Date(timestamp);
   return date.toLocaleDateString();
 },
-//
+// Add interview review
+addSecondReview() {
+  const id = this.data.id;
+  const type = 1;
+  
+  // Navigate to the new page with parameters
+  wx.navigateTo({
+    url: `/pages/interviewReviewNew/interviewReviewNew?id=${id}&type=${type}`,
+  });
+},
+// Add interview review
+addThirdReview() {
+  const id = this.data.id;
+  const type = 2;
+  
+  // Navigate to the new page with parameters
+  wx.navigateTo({
+    url: `/pages/interviewReviewNew/interviewReviewNew?id=${id}&type=${type}`,
+  });
+},
 
-  fetchLeaderReviewDetails: function(id) {
+// Fetch Leader Review details
+fetchLeaderReviewDetails: function(id) {
     wx.cloud.callFunction({
       name: 'getArchiveByID',
       data: {
@@ -46,15 +66,15 @@ dateToString: function (timestamp) {
         let hasLeaderReview = res.result.leaderReview ? true : false;
         let hasOnboardReview = hasLeaderReview && res.result.leaderReview.onboardReview ? true : false;
         let hasOffboardReview = hasLeaderReview && res.result.leaderReview.offboardReview ? true : false;
-          let hasfirstReview = hasLeaderReview && res.result.leaderReview.firstReview ? true : false;
-          let firstReview = hasfirstReview ? res.result.leaderReview.firstReview : null;
-          let firstReviewDateString = hasfirstReview ? this.dateToString(firstReview.date) : null;
-          let hassecondReview = hasLeaderReview && res.result.leaderReview.secondReview ? true : false;
-          let secondReview = hassecondReview ? res.result.leaderReview.secondReview : null;
-          let secondReviewDateString = hassecondReview ? this.dateToString(secondReview.date) : null;
-          let hasthirdReview = hasLeaderReview && res.result.leaderReview.thirdReview ? true : false;
-          let thirdReview = hasthirdReview ? res.result.leaderReview.thirdReview : null;
-          let thirdReviewDateString = hasthirdReview ? this.dateToString(thirdReview.date) : null;
+        let hasfirstReview = hasLeaderReview && res.result.leaderReview.firstReview ? true : false;
+        let firstReview = hasfirstReview ? res.result.leaderReview.firstReview : null;
+        let firstReviewDateString = hasfirstReview ? this.dateToString(firstReview.date) : null;
+        let hassecondReview = hasLeaderReview && res.result.leaderReview.secondReview ? true : false;
+        let secondReview = hassecondReview ? res.result.leaderReview.secondReview : null;
+        let secondReviewDateString = hassecondReview ? this.dateToString(secondReview.date) : null;
+        let hasthirdReview = hasLeaderReview && res.result.leaderReview.thirdReview ? true : false;
+        let thirdReview = hasthirdReview ? res.result.leaderReview.thirdReview : null;
+        let thirdReviewDateString = hasthirdReview ? this.dateToString(thirdReview.date) : null;
         this.setData({
           hasfirstReview,
           firstReview,

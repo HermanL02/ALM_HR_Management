@@ -88,6 +88,9 @@ Page({
     })
     .then(res => {
       console.log(res.result)  // 输出云函数返回结果
+      wx.navigateBack({
+        delta: 2  // Return one page back
+      });
     })
     .catch(console.error)  // 打印错误信息
 

@@ -20,3 +20,17 @@
 <view class="button-sp-area">
     <button bindtap="copyOpenId" class="weui-btn weui-btn_primary">复制Open ID</button>
 </view>
+
+<view>
+  <view class="weui-cell weui-cell_input" wx:if="{{role == 'admin'}}">
+    <view class="weui-cell__hd">
+      <label class="weui-label">OpenID</label>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" type="text" placeholder="请输入openid" bindinput="bindInputOpenId" />
+    </view>
+  </view>
+  <view class="weui-btn weui-btn_primary" wx:if="{{role == 'admin'}}" bindtap="onAddviceadminTap">新增子管理员</view>
+</view>
+
+

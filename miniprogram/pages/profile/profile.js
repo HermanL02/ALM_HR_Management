@@ -100,5 +100,50 @@ Page({
    */
   onShareAppMessage() {
 
-  }
+  },
+  bindInputOpenId: function(e) {
+    this.setData({
+      useropenid: e.detail.value
+    });
+  },
+  onAddviceadminTap: function() {
+    wx.showLoading({
+      title: '正在上传',
+    });
+
+    wx.cloud.callFunction({
+      name: 'addViceAdmin',
+      data: {
+        useropenid: this.data.useropenid
+      },
+      success: res => {
+        wx.hideLoading();
+        
+        // 检查云函数返回的结果
+        if (res.result.code && res.result.code < 0) {
+          // 如果云函数返回了错误码，显示错误信息
+          wx.showToast({
+            title: res.result.message,
+            icon: 'none'
+          });
+        } else {
+          // 如果云函数成功执行，显示上传完成信息
+          wx.showToast({
+            title: '上传完成',
+          });
+          this.setData({
+            openid: ''
+          });
+        }
+      },
+      fail: err => {
+        wx.hideLoading();
+        wx.showToast({
+          title: '上传失败',
+        });
+        console.error('[云函数] [addViceAdmin] 调用失败', err);
+      }
+    });
+}
+
 })

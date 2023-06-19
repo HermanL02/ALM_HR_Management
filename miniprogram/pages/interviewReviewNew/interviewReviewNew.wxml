@@ -1,0 +1,33 @@
+<view class="weui-cells__title">建议：</view>
+<radio-group class="radio-group" bindchange="reviewRadioChange" data-field="recommendation">
+    <label>
+        <radio value="试用" checked="{{recommendation == '试用'}}"/> 拟予试用
+    </label>
+    <label>
+        <radio value="考虑" checked="{{recommendation == '考虑'}}"/> 列入考虑
+    </label>
+    <label>
+        <radio value="不录用" checked="{{recommendation == '不录用'}}"/> 不予录用
+    </label>
+</radio-group>
+
+<view class="weui-cells__title">面试人：</view>
+<view class="weui-cells">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+            <input class="weui-input" type="text" placeholder="请输入面试人" value="{{openid}}" disabled="true" bindinput="inputChange" data-field="interviewer"/>
+        </view>
+    </view>
+</view>
+
+<view class="weui-cells__title">日期：</view>
+<view class="weui-cells">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="date" value="{{date}}" disabled="true"/>
+        </view>
+    </view>
+</view>
+<view class="weui-btn-area">
+    <button class="weui-btn weui-btn_primary" bindtap="submit">提交</button>
+</view>
