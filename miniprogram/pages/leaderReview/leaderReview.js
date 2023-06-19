@@ -46,15 +46,15 @@ dateToString: function (timestamp) {
         let hasLeaderReview = res.result.leaderReview ? true : false;
         let hasOnboardReview = hasLeaderReview && res.result.leaderReview.onboardReview ? true : false;
         let hasOffboardReview = hasLeaderReview && res.result.leaderReview.offboardReview ? true : false;
-        let hasfirstReview = res.result.leaderReview.firstReview ? true : false;
-        let firstReview = hasfirstReview ? res.result.leaderReview.firstReview : null;
-        let firstReviewDateString = hasfirstReview ? this.dateToString(firstReview.date) : null;
-        let hassecondReview = res.result.leaderReview.secondReview ? true : false;
-        let secondReview = hassecondReview ? res.result.leaderReview.secondReview : null;
-        let secondReviewDateString = hassecondReview ? this.dateToString(secondReview.date) : null;
-        let hasthirdReview = res.result.leaderReview.thirdReview ? true : false;
-        let thirdReview = hasthirdReview ? res.result.leaderReview.thirdReview : null;
-        let thirdReviewDateString = hasthirdReview ? this.dateToString(thirdReview.date) : null;
+          let hasfirstReview = hasLeaderReview && res.result.leaderReview.firstReview ? true : false;
+          let firstReview = hasfirstReview ? res.result.leaderReview.firstReview : null;
+          let firstReviewDateString = hasfirstReview ? this.dateToString(firstReview.date) : null;
+          let hassecondReview = hasLeaderReview && res.result.leaderReview.secondReview ? true : false;
+          let secondReview = hassecondReview ? res.result.leaderReview.secondReview : null;
+          let secondReviewDateString = hassecondReview ? this.dateToString(secondReview.date) : null;
+          let hasthirdReview = hasLeaderReview && res.result.leaderReview.thirdReview ? true : false;
+          let thirdReview = hasthirdReview ? res.result.leaderReview.thirdReview : null;
+          let thirdReviewDateString = hasthirdReview ? this.dateToString(thirdReview.date) : null;
         this.setData({
           hasfirstReview,
           firstReview,
