@@ -45,22 +45,33 @@ Page({
 
   // Fetch employee details with _id
   fetchEmployeeDetails: function(id) {
+    wx.showLoading({
+      title: '正在获取信息',
+    });
+
     wx.cloud.callFunction({
       name: 'getArchiveByID',
       data: {
         id: id 
       },
       success: res => {
+        wx.hideLoading();
         console.log('form:', res.result);
         this.setData({
           form: res.result
         });
       },
       fail: err => {
+        wx.hideLoading();
         console.error('Failed to get employee:', err);
+        wx.showToast({
+          title: '获取员工信息失败',
+          icon: 'none'
+        });
       }
     });
   },
+
 
   //原属archiveNew的function
 // 所有输入性change统一函数

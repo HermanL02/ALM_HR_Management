@@ -63,6 +63,7 @@ Page({
   },
   // 提交
   submit() {
+    
     console.log(this.data);
     // 处理提交逻辑...
     wx.cloud.callFunction({
@@ -74,6 +75,7 @@ Page({
       },
     })
     .then(res => {
+      
       console.log(res.result)  // 输出云函数返回结果
     })
     .catch(console.error)  // 打印错误信息

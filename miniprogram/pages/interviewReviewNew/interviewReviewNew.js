@@ -90,7 +90,10 @@ Page({
 
   },
   submit(){
-   
+    wx.showLoading({
+      title: '正在提交',
+    });
+
     wx.cloud.callFunction({
       name: 'interviewReview',
       data: {
@@ -100,13 +103,26 @@ Page({
       },
     })
     .then(res => {
-      console.log(res.result)  // 输出云函数返回结果
+      wx.hideLoading();
+      console.log(res.result);  // 输出云函数返回结果
+      wx.showToast({
+        title: '提交成功',
+        icon: 'success'
+      });
       wx.navigateBack({
         delta: 2  // Return one page back
       });
     })
-    .catch(console.error)  // 打印错误信息
+    .catch(err => {
+      wx.hideLoading();
+      console.error(err);  // 打印错误信息
+      wx.showToast({
+        title: '提交失败',
+        icon: 'none'
+      });
+    });
   },
+
   /**
    * Called when user click on the top right corner to share
    */

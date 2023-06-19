@@ -29,12 +29,17 @@ Page({
   },
 
   fetchEmployeeDetails: function(id) {
+    wx.showLoading({
+      title: '正在获取信息',
+    });
+
     wx.cloud.callFunction({
       name: 'getArchiveByID',
       data: {
         id: id 
       },
       success: res => {
+        wx.hideLoading();
         console.log('form:', res.result);
         if (!res.result.reviews) {
           res.result.reviews = [];
@@ -44,10 +49,16 @@ Page({
         });
       },
       fail: err => {
+        wx.hideLoading();
         console.error('Failed to get employee:', err);
+        wx.showToast({
+          title: '获取员工信息失败',
+          icon: 'none'
+        });
       }
     });
   },
+
 
   navigateToDetail: function (event) {
     // Get _id from event.currentTarget.dataset
@@ -67,6 +78,10 @@ Page({
   },
   // 提交评价
   submitComment: function() {
+    wx.showLoading({
+      title: '正在提交评论',
+    });
+
     wx.cloud.callFunction({
       name: 'addReview',
       data: {
@@ -75,6 +90,7 @@ Page({
       },
       
       success: res => {
+        wx.hideLoading();
         console.log(res);
         wx.showToast({
           title: "提交成功",
@@ -97,10 +113,16 @@ Page({
         }
       },
       fail: err => {
+        wx.hideLoading();
         console.error('Failed to add review:', err);
+        wx.showToast({
+          title: '提交评论失败',
+          icon: 'none'
+        });
       }
     });
   },
+
   //删除档案
   deleteArchive: function(e) {
     const id = e.currentTarget.dataset.id;

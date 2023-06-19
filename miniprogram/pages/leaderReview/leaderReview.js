@@ -54,6 +54,9 @@ addThirdReview() {
 
 // Fetch Leader Review details
 fetchLeaderReviewDetails: function(id) {
+  wx.showLoading({
+    title: '',
+  });
     wx.cloud.callFunction({
       name: 'getArchiveByID',
       data: {
@@ -61,7 +64,7 @@ fetchLeaderReviewDetails: function(id) {
       },
       success: res => {
         console.log('form:', res.result);
-  
+        wx.hideLoading();
         // 判断存在条件，屎山代码
         let hasLeaderReview = res.result.leaderReview ? true : false;
         let hasOnboardReview = hasLeaderReview && res.result.leaderReview.onboardReview ? true : false;
@@ -117,6 +120,7 @@ fetchLeaderReviewDetails: function(id) {
         });
       },
       fail: err => {
+        wx.hideLoading();
         console.error('Failed to get employee:', err);
       }
     });
