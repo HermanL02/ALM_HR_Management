@@ -14,7 +14,7 @@ exports.main = async (event, context) => {
 
   // 先取出集合记录总数
   total = (await db.collection('archive').where({
-    username: db.RegExp({ // 搜索用户名
+   name: db.RegExp({ // 搜索用户名
       regexp: keyword, // 从外部传入的关键词
       options: 'i', // 不区分大小写
     })
@@ -26,7 +26,7 @@ exports.main = async (event, context) => {
   for (let i = 0; i < batchTimes; i++) {
     const promise = db.collection('archive')
     .where({
-      username: db.RegExp({
+      name: db.RegExp({
         regexp: '.*' + keyword + '.*', 
         options: 'i',
       })

@@ -1,6 +1,7 @@
 Page({
   data: {
-    employees: []
+    employees: [],
+    searchKeyword: '', // 用户输入的搜索关键词
   },
 
   onLoad: function() {
@@ -9,7 +10,40 @@ Page({
     this.fetchUsers();
 
   },
+ // 当用户输入时，更新搜索关键词
+ bindSearchInput: function(e) {
+  this.setData({
+    searchKeyword: e.detail.value
+  });
+},
 
+// 当用户点击搜索按钮时，调用云函数搜索用户
+onSearchTap: function() {
+  const that = this;
+  const keyword = this.data.searchKeyword;
+
+  wx.showLoading({
+    title: '搜索中...',
+  });
+
+  wx.cloud.callFunction({
+    name: 'getArchiveByKW',
+    data: {
+      keyword: keyword,
+    },
+    success: function(res) {
+      console.log(res.result.data);
+      that.setData({
+        employees: res.result.data
+      });
+      wx.hideLoading();
+    },
+    fail: function(res) {
+      console.log('Error fetching users:', res);
+      wx.hideLoading();
+    }
+  });
+},
   showModal() {
     this.setData({
       modalName: 'Modal'

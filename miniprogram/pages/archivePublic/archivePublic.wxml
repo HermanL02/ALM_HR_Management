@@ -1,7 +1,7 @@
 <view class="container">
   <!-- Search Bar -->
   <view class="search-bar">
-    <mp-searchbar> type="text" placeholder="Search" class="weui-input" bindinput="bindSearchInput" </mp-searchbar>
+    <mp-searchbar type="text" placeholder="Search" class="weui-input" bindinput="bindSearchInput"> </mp-searchbar>
     <button class="weui-btn weui-btn_primary" bindtap="onSearchTap">搜索</button>
     <view wx:if="{{modalName == 'Modal'}}" class="weui-dialog__ft">
   <view class="weui-dialog">
