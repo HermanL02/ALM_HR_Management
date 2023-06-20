@@ -9,8 +9,6 @@ Page({
     },
   },
   onLoad: function (options) {
-      console.log(options);
-      // id 和 type 通过 url 参数传入，将会在 options 对象中
       const id = options.id;
       const type = options.type;
       //设置openid，来填写面试人

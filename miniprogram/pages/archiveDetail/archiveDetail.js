@@ -25,14 +25,14 @@ Page({
   },
   // onload自动获取信息
   onLoad: function (options) {
-    // Get _id from options
-    const id = options.id;
-    // Set _id as page data
     this.setData({
-      'form._id': id
-    });
+      form: wx.getStorageSync('form')
+    })
+    // Get _id from options
+    const id = this.data.form._id;
+    // Set _id as page data
     // Fetch employee details with _id...
-    this.fetchEmployeeDetails(id);
+
     // Confirm Role
     this.setData({
       role: getApp().globalData.role
@@ -52,34 +52,6 @@ Page({
         disabled: false,
       });
     }
-  },
-  // Fetch employee details with _id
-  fetchEmployeeDetails: function(id) {
-    wx.showLoading({
-      title: '正在获取信息',
-    });
-
-    wx.cloud.callFunction({
-      name: 'getArchiveByID',
-      data: {
-        id: id 
-      },
-      success: res => {
-        wx.hideLoading();
-        console.log('form:', res.result);
-        this.setData({
-          form: res.result
-        });
-      },
-      fail: err => {
-        wx.hideLoading();
-        console.error('Failed to get employee:', err);
-        wx.showToast({
-          title: '获取员工信息失败',
-          icon: 'none'
-        });
-      }
-    });
   },
 
 

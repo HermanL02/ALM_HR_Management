@@ -20,14 +20,19 @@ Page({
     });
     // Get _id from options
     const id = options.id;
-    // Set _id as page data
-    this.setData({
-      'id': id
-    });
     console.log("Overview Page Received ID:"+ id);
     this.fetchEmployeeDetails(id);
   },
-
+  // 当从二级页面返回时
+  onShow: function (options) {
+    this.setData({
+      role: getApp().globalData.role
+    });
+    // Get _id from options
+    const id =  wx.getStorageSync('form')._id;
+    console.log("Overview Page Received ID:"+ id);
+    this.fetchEmployeeDetails(id);
+  },
   fetchEmployeeDetails: function(id) {
     wx.showLoading({
       title: '正在获取信息',
@@ -61,13 +66,10 @@ Page({
 
 
   navigateToDetail: function (event) {
-    // Get _id from event.currentTarget.dataset
-    const id = event.currentTarget.dataset.id;
-    console.log(id);
-    // Navigate to employeeDetail page with _id as a parameter
+    wx.setStorageSync('form', this.data.form)
     wx.navigateTo({
-      url: `/pages/archiveDetail/archiveDetail?id=${id}`,
-    });
+      url: '/pages/archiveDetail/archiveDetail',
+    })
   },
   handleCommentInput: function(e) {
     // 当用户输入评论时，更新newComment
@@ -85,7 +87,7 @@ Page({
     wx.cloud.callFunction({
       name: 'addReview',
       data: {
-        id: this.data.id,
+        id: this.data.form._id,
         review: this.data.newComment,
       },
       
@@ -171,13 +173,11 @@ Page({
 
   // 查看入职离职评价
   navigateToLeaderReview: function (event) {
-    // Get _id from event.currentTarget.dataset
-    const id = event.currentTarget.dataset.id;
-    console.log(id);
     // Navigate to review page with _id as a parameter
+    wx.setStorageSync('form', this.data.form)
     wx.navigateTo({
-      url: `/pages/leaderReview/leaderReview?id=${id}`,
-    });
+      url: '/pages/leaderReview/leaderReview',
+    })
   },
   
   

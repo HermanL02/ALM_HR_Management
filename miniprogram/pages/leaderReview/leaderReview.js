@@ -5,23 +5,20 @@ Page({
   },
 
   onLoad: function (options) {
-    // Get id from navigation parameter
-    const id = options.id;
     this.setData({
-      id: id,
-    });
-
-    this.fetchLeaderReviewDetails(id);
+      form: wx.getStorageSync('form')
+    })
+    this.fetchLeaderReviewDetails();
   },
   createOnboardReview: function(e) {
-    const id = this.data.id; // 你需要根据实际情况获取id的值
+    const id = this.data.form._id; // 你需要根据实际情况获取id的值
     wx.navigateTo({
         url: `/pages/onoffboardNew/onoffboardNew?id=${id}&type=0`,
     });
 },
 
     createOffboardReview: function(e) {
-        const id = this.data.id; // 你需要根据实际情况获取id的值
+        const id = this.data.form._id; // 你需要根据实际情况获取id的值
         wx.navigateTo({
             url: `/pages/onoffboardNew/onoffboardNew?id=${id}&type=1`,
         });
@@ -33,7 +30,7 @@ dateToString: function (timestamp) {
 },
 // Add interview review
 addSecondReview() {
-  const id = this.data.id;
+  const id = this.data.form._id;
   const type = 1;
   
   // Navigate to the new page with parameters
@@ -43,9 +40,8 @@ addSecondReview() {
 },
 // Add interview review
 addThirdReview() {
-  const id = this.data.id;
+  const id = this.data.form._id;
   const type = 2;
-  
   // Navigate to the new page with parameters
   wx.navigateTo({
     url: `/pages/interviewReviewNew/interviewReviewNew?id=${id}&type=${type}`,
@@ -53,30 +49,20 @@ addThirdReview() {
 },
 
 // Fetch Leader Review details
-fetchLeaderReviewDetails: function(id) {
-  wx.showLoading({
-    title: '',
-  });
-    wx.cloud.callFunction({
-      name: 'getArchiveByID',
-      data: {
-        id: id 
-      },
-      success: res => {
-        console.log('form:', res.result);
-        wx.hideLoading();
+fetchLeaderReviewDetails: function() {
+
         // 判断存在条件，屎山代码
-        let hasLeaderReview = res.result.leaderReview ? true : false;
-        let hasOnboardReview = hasLeaderReview && res.result.leaderReview.onboardReview ? true : false;
-        let hasOffboardReview = hasLeaderReview && res.result.leaderReview.offboardReview ? true : false;
-        let hasfirstReview = hasLeaderReview && res.result.leaderReview.firstReview ? true : false;
-        let firstReview = hasfirstReview ? res.result.leaderReview.firstReview : null;
+        let hasLeaderReview = this.data.form.leaderReview ? true : false;
+        let hasOnboardReview = hasLeaderReview && this.data.form.leaderReview.onboardReview ? true : false;
+        let hasOffboardReview = hasLeaderReview && this.data.form.leaderReview.offboardReview ? true : false;
+        let hasfirstReview = hasLeaderReview && this.data.form.leaderReview.firstReview ? true : false;
+        let firstReview = hasfirstReview ? this.data.form.leaderReview.firstReview : null;
         let firstReviewDateString = hasfirstReview ? this.dateToString(firstReview.date) : null;
-        let hassecondReview = hasLeaderReview && res.result.leaderReview.secondReview ? true : false;
-        let secondReview = hassecondReview ? res.result.leaderReview.secondReview : null;
+        let hassecondReview = hasLeaderReview && this.data.form.leaderReview.secondReview ? true : false;
+        let secondReview = hassecondReview ? this.data.form.leaderReview.secondReview : null;
         let secondReviewDateString = hassecondReview ? this.dateToString(secondReview.date) : null;
-        let hasthirdReview = hasLeaderReview && res.result.leaderReview.thirdReview ? true : false;
-        let thirdReview = hasthirdReview ? res.result.leaderReview.thirdReview : null;
+        let hasthirdReview = hasLeaderReview && this.data.form.leaderReview.thirdReview ? true : false;
+        let thirdReview = hasthirdReview ? this.data.form.leaderReview.thirdReview : null;
         let thirdReviewDateString = hasthirdReview ? this.dateToString(thirdReview.date) : null;
         this.setData({
           hasfirstReview,
@@ -115,15 +101,6 @@ fetchLeaderReviewDetails: function(id) {
           });
         }
   
-        this.setData({
-          form: res.result
-        });
-      },
-      fail: err => {
-        wx.hideLoading();
-        console.error('Failed to get employee:', err);
-      }
-    });
   }
   
 });
