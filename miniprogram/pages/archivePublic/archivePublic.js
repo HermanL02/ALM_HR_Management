@@ -4,10 +4,22 @@ Page({
   },
 
   onLoad: function() {
+    this.showModal();
     console.log( getApp().globalData.role);
     this.fetchUsers();
+
   },
 
+  showModal() {
+    this.setData({
+      modalName: 'Modal'
+    })
+  },
+  hideModal() {
+    this.setData({
+      modalName: null
+    })
+  },
   onShow: function(){
     console.log( getApp().globalData.role);
     this.fetchUsers();
@@ -15,7 +27,7 @@ Page({
 
   fetchUsers: function() {
     wx.showLoading({
-      title: '正在加载...',
+      title: '',
     });
     let that = this;
     wx.cloud.callFunction({

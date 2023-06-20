@@ -60,7 +60,7 @@ Page({
       let self = this;
       wx.showModal({
         title: '确认',
-        content: '你确认同意沈阳爱乐盟工程顾问有限公司收集你的信息吗？信息将用作入职申请和人才共享',
+        content: '您确认授权沈阳爱乐盟工程顾问有限公司收集并处理您的个人信息吗？我们将仅将您的信息用于处理入职申请以及人才库共享的相关目的。请您在理解并同意我们的数据处理政策后进行确认。',
         success: function(res) {
           if (res.confirm) {
             console.log('用户点击确定');

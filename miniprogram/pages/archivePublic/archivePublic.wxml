@@ -3,26 +3,21 @@
   <view class="search-bar">
     <mp-searchbar> type="text" placeholder="Search" class="weui-input" bindinput="bindSearchInput" </mp-searchbar>
     <button class="weui-btn weui-btn_primary" bindtap="onSearchTap">搜索</button>
-    <view class="notification-bar">
-      <view class="weui-textarea">
-      <text>小程序仅供公司内部与合作伙伴使用，严格保护用户隐私，不对外部开放</text>
+    <view wx:if="{{modalName == 'Modal'}}" class="weui-dialog__ft">
+  <view class="weui-dialog">
+    <view class="weui-dialog__hd">
+      <strong class="weui-dialog__title">通知</strong>
+    </view>
+    <view class="weui-dialog__bd">小程序仅供公司内部与合作伙伴使用，严格保护用户隐私，不对外部开放</view>
+    <view class="weui-dialog__ft">
+      <button bindtap='hideModal' class="weui-dialog__btn">我知道了</button>
     </view>
   </view>
+  <view class="weui-mask"></view>
+</view>
+
   </view>
-  <!-- Title Bar -->
-  <!-- <view class="weui-cells title-bar">
-    <view class="weui-cell">
-      <view class="weui-cell__bd">
-        <text>名字</text>
-      </view>
-      <view class="weui-cell__bd">
-        <text>生日</text>
-      </view>
-      <view class="weui-cell__ft">
-        <text>查看更多</text>
-      </view>
-    </view>
-  </view> -->
+
   <!-- Employees List -->
   <view class="list" wx:for="{{employees}}" wx:key="_id">
     <view class="weui-cells">
