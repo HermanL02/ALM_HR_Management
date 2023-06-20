@@ -19,19 +19,17 @@ Page({
       role: getApp().globalData.role
     });
     // Get _id from options
-    const id = options.id;
-    console.log("Overview Page Received ID:"+ id);
-    this.fetchEmployeeDetails(id);
+    if(options.id){
+      const id = options.id;   
+      this.fetchEmployeeDetails(id);
+    }else{
+      const id =  wx.getStorageSync('form')._id; 
+      this.fetchEmployeeDetails(id);
+    }
   },
   // 当从二级页面返回时
-  onShow: function (options) {
-    this.setData({
-      role: getApp().globalData.role
-    });
-    // Get _id from localstorage 与ONLOAD不同！
-    const id =  wx.getStorageSync('form')._id;
-    console.log("Overview Page Received ID:"+ id);
-    this.fetchEmployeeDetails(id);
+  onShow: function () {
+    this.fetchEmployeeDetails(wx.getStorageSync('form')._id);
   },
   fetchEmployeeDetails: function(id) {
     wx.showLoading({
@@ -127,7 +125,7 @@ Page({
 
   //删除档案
   deleteArchive: function(e) {
-    const id = e.currentTarget.dataset.id;
+    const id = this.data.form._id;
     wx.showModal({
       title: '确认',
       content: '确定要删除这个档案吗?',

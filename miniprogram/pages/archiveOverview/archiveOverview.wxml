@@ -16,7 +16,7 @@
 <button class="weui-btn weui-btn_mini weui-btn_default" bindtap="navigateToLeaderReview" data-id="{{id}}">查看入职离职评价</button>
 
 
-<button class="weui-btn weui-btn_mini weui-btn_warn" bindtap="deleteArchive" data-id="{{id}}" wx:if="{{role == 'admin'}}">删除档案</button>
+<button class="weui-btn weui-btn_mini weui-btn_warn" bindtap="deleteArchive" wx:if="{{role == 'admin'}}">删除档案</button>
 
 <view class="weui-panel weui-panel_access">
   <view class="weui-panel__hd">评论</view>
