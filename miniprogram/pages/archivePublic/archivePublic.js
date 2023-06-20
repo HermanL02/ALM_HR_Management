@@ -55,8 +55,7 @@ onSearchTap: function() {
     this.fetchUsers();
   },
   onShow: function(){
-    console.log( getApp().globalData.role);
-    this.fetchUsers();
+    this.onLoad();
   },
 
   fetchUsers: function() {
