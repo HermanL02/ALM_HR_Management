@@ -15,21 +15,18 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    this.setData({
-      role: getApp().globalData.role
-    });
-    // Get _id from options
-    if(options.id){
-      const id = options.id;   
-      this.fetchEmployeeDetails(id);
-    }else{
-      const id =  wx.getStorageSync('form')._id; 
-      this.fetchEmployeeDetails(id);
+    this.setData({ 
+      role: getApp().globalData.role 
+    }); 
+    if(options){
+      this.setData({
+        id:options.id,
+      })
     }
   },
-  // 当从二级页面返回时
+  // 无论什么时候显示都刷新页面信息
   onShow: function () {
-    this.fetchEmployeeDetails(wx.getStorageSync('form')._id);
+    this.fetchEmployeeDetails(this.data.id);
   },
   fetchEmployeeDetails: function(id) {
     wx.showLoading({
@@ -64,9 +61,9 @@ Page({
 
 
   navigateToDetail: function (event) {
-    wx.setStorageSync('form', this.data.form)
+    let formStr=JSON.stringify(this.data.form);
     wx.navigateTo({
-      url: '/pages/archiveDetail/archiveDetail',
+      url: '/pages/archiveDetail/archiveDetail?formStr='+formStr,
     })
   },
   handleCommentInput: function(e) {
@@ -172,9 +169,9 @@ Page({
   // 查看入职离职评价
   navigateToLeaderReview: function (event) {
     // Navigate to review page with _id as a parameter
-    wx.setStorageSync('form', this.data.form)
+    let formStr=JSON.stringify(this.data.form);
     wx.navigateTo({
-      url: '/pages/leaderReview/leaderReview',
+      url: '/pages/leaderReview/leaderReview?formStr='+formStr,
     })
   },
   

@@ -26,7 +26,7 @@ Page({
   // onload自动获取信息
   onLoad: function (options) {
     this.setData({
-      form: wx.getStorageSync('form')
+      form: JSON.parse(options.formStr)
     })
     // Get _id from options
     const id = this.data.form._id;

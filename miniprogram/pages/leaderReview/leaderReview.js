@@ -6,7 +6,7 @@ Page({
 
   onLoad: function (options) {
     this.setData({
-      form: wx.getStorageSync('form')
+      form: JSON.parse(options.formStr)
     })
     this.fetchLeaderReviewDetails();
   },
