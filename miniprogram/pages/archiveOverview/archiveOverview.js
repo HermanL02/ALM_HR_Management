@@ -28,7 +28,7 @@ Page({
     this.setData({
       role: getApp().globalData.role
     });
-    // Get _id from options
+    // Get _id from localstorage 与ONLOAD不同！
     const id =  wx.getStorageSync('form')._id;
     console.log("Overview Page Received ID:"+ id);
     this.fetchEmployeeDetails(id);
