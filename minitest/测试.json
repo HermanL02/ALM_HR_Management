@@ -1,0 +1,3398 @@
+{
+  "meta": {
+    "caseId": "5dc70ed7-7bff-4a96-9574-7b54a7deca91",
+    "caseName": "测试",
+    "remarks": "",
+    "version": "0.0.1",
+    "startTime": 1687293013401,
+    "endTime": 1687293086710,
+    "appid": "wx4b16522af9b67ce5",
+    "casePath": "",
+    "caseType": "normal",
+    "commonParams": [
+      {
+        "key": "1687293086729",
+        "name": "",
+        "value": ""
+      }
+    ]
+  },
+  "env": {
+    "wxapplibVersion": "2.14.1",
+    "devtoolsVersion": "1.06.2306020",
+    "openid": "o6zAJs-Or4BUgjP-Dy5Qb8bZykoo",
+    "entry": {
+      "path": "pages/archiveNew/archiveNew",
+      "query": "",
+      "scene": 1001
+    },
+    "mock": [
+      "request"
+    ],
+    "maxWaitFor": 10,
+    "ignoreSelectors": [],
+    "mockAPIs": [],
+    "cleanCache": [
+      "none"
+    ],
+    "groupTouch": false,
+    "replaySetting": {
+      "screenshot": "none"
+    },
+    "simulatorType": "wechat",
+    "device": "iPhone 5",
+    "recordAPIs": [
+      "chooseImage"
+    ]
+  },
+  "commands": [
+    {
+      "layer": "tool",
+      "commandType": "operate",
+      "command": "startRecord",
+      "waitfor": 0,
+      "timeStamp": 1687293013402,
+      "desc": ""
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 200,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 2465,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchstart",
+      "target": "view.weui-uploader__input",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 157.5,
+            "clientY": 36.75,
+            "force": 1,
+            "pageX": 157.5,
+            "pageY": 236.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 525,
+            "screenY": 269
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 157.5,
+            "clientY": 36.75,
+            "force": 1,
+            "pageX": 157.5,
+            "pageY": 236.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 525,
+            "screenY": 269
+          }
+        ]
+      },
+      "targetCandidates": [
+        "view.weui-uploader__input",
+        ".weui-uploader__input",
+        "/view/form/view[2]/view/view/view/view/view[2]/view"
+      ],
+      "timeStamp": 3282,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchend",
+      "target": "view.weui-uploader__input",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 157.5,
+            "clientY": 36.75,
+            "pageX": 157.5,
+            "pageY": 236.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 525,
+            "screenY": 269
+          }
+        ],
+        "touches": []
+      },
+      "targetCandidates": [
+        "view.weui-uploader__input",
+        ".weui-uploader__input",
+        "/view/form/view[2]/view/view/view/view/view[2]/view"
+      ],
+      "timeStamp": 3387,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "tap",
+      "target": "view.weui-uploader__input",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {
+          "x": 157.5,
+          "y": 236.75
+        },
+        "changedTouches": [
+          {
+            "clientX": 157.5,
+            "clientY": 36.75,
+            "force": 1,
+            "pageX": 157.5,
+            "pageY": 236.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 525,
+            "screenY": 269
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 157.5,
+            "clientY": 36.75,
+            "force": 1,
+            "pageX": 157.5,
+            "pageY": 236.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 525,
+            "screenY": 269
+          }
+        ]
+      },
+      "targetCandidates": [
+        "view.weui-uploader__input",
+        ".weui-uploader__input",
+        "/view/form/view[2]/view/view/view/view/view[2]/view"
+      ],
+      "timeStamp": 3387,
+      "waitfor": 0,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "layer": "appservice",
+      "command": "mock",
+      "rule": {
+        "ruleId": "584a2063-a18f-4956-8ea7-45a4bd1c1bf7",
+        "ruleName": "chooseImage",
+        "apiName": "chooseImage",
+        "enable": true,
+        "verifyFail": false,
+        "isOneTime": true,
+        "filterList": [],
+        "returnConfig": {
+          "returnType": "succ",
+          "generateType": "manual",
+          "manual": {
+            "succ": {
+              "resStr": "{\"errMsg\":\"chooseImage:ok\",\"tempFilePaths\":[\"http://tmp/rIMWs4r1DqH75c3dfdcb7574b579d0dd2d846c24f73e.png\"],\"tempFiles\":[{\"path\":\"http://tmp/rIMWs4r1DqH75c3dfdcb7574b579d0dd2d846c24f73e.png\",\"size\":19732}]}"
+            },
+            "fail": {
+              "resStr": ""
+            }
+          }
+        },
+        "originArgs": [
+          {
+            "count": 1,
+            "sizeType": [
+              "compressed"
+            ],
+            "sourceType": [
+              "album",
+              "camera"
+            ]
+          }
+        ],
+        "mediaFiles": {
+          "http://tmp/rIMWs4r1DqH75c3dfdcb7574b579d0dd2d846c24f73e.png": "rIMWs4r1DqH75c3dfdcb7574b579d0dd2d846c24f73e.png"
+        }
+      }
+    },
+    {
+      "tagName": "input",
+      "command": "touchstart",
+      "target": "/view/form/view[3]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入姓名",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[3]/view[2]/input"
+      ],
+      "timeStamp": 8734,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchend",
+      "target": "/view/form/view[3]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入姓名",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[3]/view[2]/input"
+      ],
+      "timeStamp": 8750,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "tap",
+      "target": "/view/form/view[3]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入姓名",
+      "eventData": {
+        "detail": {
+          "x": 182.5,
+          "y": 337.75
+        }
+      },
+      "targetCandidates": [
+        "/view/form/view[3]/view[2]/input"
+      ],
+      "timeStamp": 8751,
+      "waitfor": 1,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[3]/view[2]/input",
+      "value": "1",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[3]/view[2]/input"
+      ],
+      "timeStamp": 9946,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchstart",
+      "target": "/view/form/view[4]/view[2]/picker/view",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 177.5,
+            "clientY": 201.75,
+            "force": 1,
+            "pageX": 177.5,
+            "pageY": 401.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 545,
+            "screenY": 434
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 177.5,
+            "clientY": 201.75,
+            "force": 1,
+            "pageX": 177.5,
+            "pageY": 401.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 545,
+            "screenY": 434
+          }
+        ]
+      },
+      "targetCandidates": [
+        "/view/form/view[4]/view[2]/picker/view"
+      ],
+      "timeStamp": 10725,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchend",
+      "target": "/view/form/view[4]/view[2]/picker/view",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 177.5,
+            "clientY": 201.75,
+            "pageX": 177.5,
+            "pageY": 401.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 545,
+            "screenY": 434
+          }
+        ],
+        "touches": []
+      },
+      "targetCandidates": [
+        "/view/form/view[4]/view[2]/picker/view"
+      ],
+      "timeStamp": 10832,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "tap",
+      "target": "/view/form/view[4]/view[2]/picker/view",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {
+          "x": 177.5,
+          "y": 401.75
+        },
+        "changedTouches": [
+          {
+            "clientX": 177.5,
+            "clientY": 201.75,
+            "force": 1,
+            "pageX": 177.5,
+            "pageY": 401.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 545,
+            "screenY": 434
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 177.5,
+            "clientY": 201.75,
+            "force": 1,
+            "pageX": 177.5,
+            "pageY": 401.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 545,
+            "screenY": 434
+          }
+        ]
+      },
+      "targetCandidates": [
+        "/view/form/view[4]/view[2]/picker/view"
+      ],
+      "timeStamp": 10832,
+      "waitfor": 0,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "timeStamp": 12124,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "native",
+      "command": "hidePickerView",
+      "data": {
+        "value": "0"
+      },
+      "target": "/view/form/view[4]/view[2]/picker"
+    },
+    {
+      "tagName": "view",
+      "command": "touchstart",
+      "target": "/view/form/view[5]",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "出生年月：",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 274.5,
+            "clientY": 229.75,
+            "force": 1,
+            "pageX": 274.5,
+            "pageY": 429.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 642,
+            "screenY": 462
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 274.5,
+            "clientY": 229.75,
+            "force": 1,
+            "pageX": 274.5,
+            "pageY": 429.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 642,
+            "screenY": 462
+          }
+        ]
+      },
+      "targetCandidates": [
+        "/view/form/view[5]"
+      ],
+      "timeStamp": 12834,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchend",
+      "target": "/view/form/view[5]",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "出生年月：",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 274.5,
+            "clientY": 229.75,
+            "pageX": 274.5,
+            "pageY": 429.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 642,
+            "screenY": 462
+          }
+        ],
+        "touches": []
+      },
+      "targetCandidates": [
+        "/view/form/view[5]"
+      ],
+      "timeStamp": 12923,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "tap",
+      "target": "/view/form/view[5]",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "出生年月：",
+      "eventData": {
+        "detail": {
+          "x": 274.5,
+          "y": 429.75
+        },
+        "changedTouches": [
+          {
+            "clientX": 274.5,
+            "clientY": 229.75,
+            "force": 1,
+            "pageX": 274.5,
+            "pageY": 429.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 642,
+            "screenY": 462
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 274.5,
+            "clientY": 229.75,
+            "force": 1,
+            "pageX": 274.5,
+            "pageY": 429.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 642,
+            "screenY": 462
+          }
+        ]
+      },
+      "targetCandidates": [
+        "/view/form/view[5]"
+      ],
+      "timeStamp": 12923,
+      "waitfor": 0,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "picker",
+      "command": "change",
+      "target": "/view/form/view[4]/view[2]/picker",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {
+          "value": "0"
+        },
+        "changedTouches": [],
+        "touches": []
+      },
+      "targetCandidates": [
+        "/view/form/view[4]/view[2]/picker"
+      ],
+      "timeStamp": 13125,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchstart",
+      "target": "/view/form/view[5]/view[2]/picker/view",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 143.5,
+            "clientY": 246.75,
+            "force": 1,
+            "pageX": 143.5,
+            "pageY": 446.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 511,
+            "screenY": 479
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 143.5,
+            "clientY": 246.75,
+            "force": 1,
+            "pageX": 143.5,
+            "pageY": 446.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 511,
+            "screenY": 479
+          }
+        ]
+      },
+      "targetCandidates": [
+        "/view/form/view[5]/view[2]/picker/view"
+      ],
+      "timeStamp": 13646,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchend",
+      "target": "/view/form/view[5]/view[2]/picker/view",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 141,
+            "clientY": 249,
+            "pageX": 141,
+            "pageY": 449,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 509,
+            "screenY": 481
+          }
+        ],
+        "touches": []
+      },
+      "targetCandidates": [
+        "/view/form/view[5]/view[2]/picker/view"
+      ],
+      "timeStamp": 13756,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "tap",
+      "target": "/view/form/view[5]/view[2]/picker/view",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {
+          "x": 141,
+          "y": 449
+        },
+        "changedTouches": [
+          {
+            "clientX": 143.5,
+            "clientY": 246.75,
+            "force": 1,
+            "pageX": 143.5,
+            "pageY": 446.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 511,
+            "screenY": 479
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 143.5,
+            "clientY": 246.75,
+            "force": 1,
+            "pageX": 143.5,
+            "pageY": 446.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 511,
+            "screenY": 479
+          }
+        ]
+      },
+      "targetCandidates": [
+        "/view/form/view[5]/view[2]/picker/view"
+      ],
+      "timeStamp": 13757,
+      "waitfor": 1,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "timeStamp": 14619,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "native",
+      "command": "hidePickerView",
+      "data": {
+        "value": "2023-06-20"
+      },
+      "target": "/view/form/view[5]/view[2]/picker"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 400,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 15248,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "picker",
+      "command": "change",
+      "target": "/view/form/view[5]/view[2]/picker",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {
+          "value": "2023-06-20"
+        },
+        "changedTouches": [],
+        "touches": []
+      },
+      "targetCandidates": [
+        "/view/form/view[5]/view[2]/picker"
+      ],
+      "timeStamp": 15620,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchstart",
+      "target": "/view/form/view[6]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入民族",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[6]/view[2]/input"
+      ],
+      "timeStamp": 16197,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchend",
+      "target": "/view/form/view[6]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入民族",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[6]/view[2]/input"
+      ],
+      "timeStamp": 16211,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "tap",
+      "target": "/view/form/view[6]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入民族",
+      "eventData": {
+        "detail": {
+          "x": 180,
+          "y": 505
+        }
+      },
+      "targetCandidates": [
+        "/view/form/view[6]/view[2]/input"
+      ],
+      "timeStamp": 16211,
+      "waitfor": 0,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 500,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 17006,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[6]/view[2]/input",
+      "value": "2",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[6]/view[2]/input"
+      ],
+      "timeStamp": 17111,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 497,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 17205,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchstart",
+      "target": "/view/form/view[7]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入身高",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[7]/view[2]/input"
+      ],
+      "timeStamp": 17285,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchend",
+      "target": "/view/form/view[7]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入身高",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[7]/view[2]/input"
+      ],
+      "timeStamp": 17374,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[7]/view[2]/input",
+      "value": "3",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[7]/view[2]/input"
+      ],
+      "timeStamp": 17442,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "tap",
+      "target": "/view/form/view[7]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {
+          "x": 171,
+          "y": 569
+        }
+      },
+      "targetCandidates": [
+        "/view/form/view[7]/view[2]/input"
+      ],
+      "timeStamp": 17582,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchstart",
+      "target": "/view/form/view[8]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入体重",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[8]/view[2]/input"
+      ],
+      "timeStamp": 17724,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchend",
+      "target": "/view/form/view[8]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入体重",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[8]/view[2]/input"
+      ],
+      "timeStamp": 17728,
+      "waitfor": 4,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[8]/view[2]/input",
+      "value": "4",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[8]/view[2]/input"
+      ],
+      "timeStamp": 17850,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "tap",
+      "target": "/view/form/view[8]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {
+          "x": 175.5,
+          "y": 613.75
+        }
+      },
+      "targetCandidates": [
+        "/view/form/view[8]/view[2]/input"
+      ],
+      "timeStamp": 17927,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchstart",
+      "target": "/view/form/view[9]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入政治面貌",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[9]/view[2]/input"
+      ],
+      "timeStamp": 18016,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchend",
+      "target": "/view/form/view[9]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入政治面貌",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[9]/view[2]/input"
+      ],
+      "timeStamp": 18116,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "tap",
+      "target": "/view/form/view[9]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入政治面貌",
+      "eventData": {
+        "detail": {
+          "x": 179,
+          "y": 686
+        }
+      },
+      "targetCandidates": [
+        "/view/form/view[9]/view[2]/input"
+      ],
+      "timeStamp": 18117,
+      "waitfor": 1,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[9]/view[2]/input",
+      "value": "5",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[9]/view[2]/input"
+      ],
+      "timeStamp": 18228,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 597,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 18648,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchstart",
+      "target": "/view/form/view[10]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入血型",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[10]/view[2]/input"
+      ],
+      "timeStamp": 19002,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchend",
+      "target": "/view/form/view[10]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入血型",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[10]/view[2]/input"
+      ],
+      "timeStamp": 19013,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "tap",
+      "target": "/view/form/view[10]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入血型",
+      "eventData": {
+        "detail": {
+          "x": 175.5,
+          "y": 732.75
+        }
+      },
+      "targetCandidates": [
+        "/view/form/view[10]/view[2]/input"
+      ],
+      "timeStamp": 19017,
+      "waitfor": 4,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[10]/view[2]/input",
+      "value": "6",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[10]/view[2]/input"
+      ],
+      "timeStamp": 19092,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchstart",
+      "target": "/view/form/view[11]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入职称及注册",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[11]/view[2]/input"
+      ],
+      "timeStamp": 19335,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchend",
+      "target": "/view/form/view[11]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入职称及注册",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[11]/view[2]/input"
+      ],
+      "timeStamp": 19341,
+      "waitfor": 6,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "tap",
+      "target": "/view/form/view[11]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入职称及注册",
+      "eventData": {
+        "detail": {
+          "x": 161.5,
+          "y": 804.75
+        }
+      },
+      "targetCandidates": [
+        "/view/form/view[11]/view[2]/input"
+      ],
+      "timeStamp": 19342,
+      "waitfor": 1,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[11]/view[2]/input",
+      "value": "7",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[11]/view[2]/input"
+      ],
+      "timeStamp": 19474,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 697,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 19915,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchstart",
+      "target": "/view/form/view[12]",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "证件类型：",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 151.5,
+            "clientY": 138.75,
+            "force": 1,
+            "pageX": 151.5,
+            "pageY": 835.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 519,
+            "screenY": 371
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 151.5,
+            "clientY": 138.75,
+            "force": 1,
+            "pageX": 151.5,
+            "pageY": 835.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 519,
+            "screenY": 371
+          }
+        ]
+      },
+      "targetCandidates": [
+        "/view/form/view[12]"
+      ],
+      "timeStamp": 20218,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchend",
+      "target": "/view/form/view[12]",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "证件类型：",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 151.5,
+            "clientY": 138.75,
+            "pageX": 151.5,
+            "pageY": 835.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 519,
+            "screenY": 371
+          }
+        ],
+        "touches": []
+      },
+      "targetCandidates": [
+        "/view/form/view[12]"
+      ],
+      "timeStamp": 20284,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "tap",
+      "target": "/view/form/view[12]",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "证件类型：",
+      "eventData": {
+        "detail": {
+          "x": 151.5,
+          "y": 835.75
+        },
+        "changedTouches": [
+          {
+            "clientX": 151.5,
+            "clientY": 138.75,
+            "force": 1,
+            "pageX": 151.5,
+            "pageY": 835.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 519,
+            "screenY": 371
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 151.5,
+            "clientY": 138.75,
+            "force": 1,
+            "pageX": 151.5,
+            "pageY": 835.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 519,
+            "screenY": 371
+          }
+        ]
+      },
+      "targetCandidates": [
+        "/view/form/view[12]"
+      ],
+      "timeStamp": 20285,
+      "waitfor": 1,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchstart",
+      "target": "/view/form/view[12]/view[2]/picker/view",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 136.5,
+            "clientY": 160.75,
+            "force": 1,
+            "pageX": 136.5,
+            "pageY": 857.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 504,
+            "screenY": 393
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 136.5,
+            "clientY": 160.75,
+            "force": 1,
+            "pageX": 136.5,
+            "pageY": 857.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 504,
+            "screenY": 393
+          }
+        ]
+      },
+      "targetCandidates": [
+        "/view/form/view[12]/view[2]/picker/view"
+      ],
+      "timeStamp": 20717,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchend",
+      "target": "/view/form/view[12]/view[2]/picker/view",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 136,
+            "clientY": 160,
+            "pageX": 136,
+            "pageY": 857,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 504,
+            "screenY": 392
+          }
+        ],
+        "touches": []
+      },
+      "targetCandidates": [
+        "/view/form/view[12]/view[2]/picker/view"
+      ],
+      "timeStamp": 20812,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "tap",
+      "target": "/view/form/view[12]/view[2]/picker/view",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {
+          "x": 136,
+          "y": 857
+        },
+        "changedTouches": [
+          {
+            "clientX": 136.5,
+            "clientY": 160.75,
+            "force": 1,
+            "pageX": 136.5,
+            "pageY": 857.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 504,
+            "screenY": 393
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 136.5,
+            "clientY": 160.75,
+            "force": 1,
+            "pageX": 136.5,
+            "pageY": 857.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 504,
+            "screenY": 393
+          }
+        ]
+      },
+      "targetCandidates": [
+        "/view/form/view[12]/view[2]/picker/view"
+      ],
+      "timeStamp": 20814,
+      "waitfor": 2,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "timeStamp": 21504,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "native",
+      "command": "hidePickerView",
+      "data": {
+        "value": "0"
+      },
+      "target": "/view/form/view[12]/view[2]/picker"
+    },
+    {
+      "tagName": "view",
+      "command": "touchstart",
+      "target": "/view/form/view[13]/view[2]/picker/view",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 175.5,
+            "clientY": 201.75,
+            "force": 1,
+            "pageX": 175.5,
+            "pageY": 898.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 543,
+            "screenY": 434
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 175.5,
+            "clientY": 201.75,
+            "force": 1,
+            "pageX": 175.5,
+            "pageY": 898.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 543,
+            "screenY": 434
+          }
+        ]
+      },
+      "targetCandidates": [
+        "/view/form/view[13]/view[2]/picker/view"
+      ],
+      "timeStamp": 21991,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchend",
+      "target": "/view/form/view[13]/view[2]/picker/view",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 174,
+            "clientY": 202,
+            "pageX": 174,
+            "pageY": 899,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 542,
+            "screenY": 434
+          }
+        ],
+        "touches": []
+      },
+      "targetCandidates": [
+        "/view/form/view[13]/view[2]/picker/view"
+      ],
+      "timeStamp": 22100,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "tap",
+      "target": "/view/form/view[13]/view[2]/picker/view",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {
+          "x": 174,
+          "y": 899
+        },
+        "changedTouches": [
+          {
+            "clientX": 175.5,
+            "clientY": 201.75,
+            "force": 1,
+            "pageX": 175.5,
+            "pageY": 898.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 543,
+            "screenY": 434
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 175.5,
+            "clientY": 201.75,
+            "force": 1,
+            "pageX": 175.5,
+            "pageY": 898.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 543,
+            "screenY": 434
+          }
+        ]
+      },
+      "targetCandidates": [
+        "/view/form/view[13]/view[2]/picker/view"
+      ],
+      "timeStamp": 22101,
+      "waitfor": 1,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "picker",
+      "command": "change",
+      "target": "/view/form/view[12]/view[2]/picker",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {
+          "value": "0"
+        },
+        "changedTouches": [],
+        "touches": []
+      },
+      "targetCandidates": [
+        "/view/form/view[12]/view[2]/picker"
+      ],
+      "timeStamp": 22505,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "timeStamp": 22767,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "native",
+      "command": "hidePickerView",
+      "data": {
+        "value": "0"
+      },
+      "target": "/view/form/view[13]/view[2]/picker"
+    },
+    {
+      "tagName": "input",
+      "command": "touchstart",
+      "target": "/view/form/view[14]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入证件号码",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[14]/view[2]/input"
+      ],
+      "timeStamp": 23367,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchend",
+      "target": "/view/form/view[14]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入证件号码",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[14]/view[2]/input"
+      ],
+      "timeStamp": 23415,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "tap",
+      "target": "/view/form/view[14]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入证件号码",
+      "eventData": {
+        "detail": {
+          "x": 229,
+          "y": 962
+        }
+      },
+      "targetCandidates": [
+        "/view/form/view[14]/view[2]/input"
+      ],
+      "timeStamp": 23417,
+      "waitfor": 2,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "picker",
+      "command": "change",
+      "target": "/view/form/view[13]/view[2]/picker",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {
+          "value": "0"
+        },
+        "changedTouches": [],
+        "touches": []
+      },
+      "targetCandidates": [
+        "/view/form/view[13]/view[2]/picker"
+      ],
+      "timeStamp": 23769,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[14]/view[2]/input",
+      "value": "8",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[14]/view[2]/input"
+      ],
+      "timeStamp": 25018,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchstart",
+      "target": "/view/form/view[15]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入毕业院校",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[15]/view[2]/input"
+      ],
+      "timeStamp": 25613,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchend",
+      "target": "/view/form/view[15]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入毕业院校",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[15]/view[2]/input"
+      ],
+      "timeStamp": 25642,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "tap",
+      "target": "/view/form/view[15]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入毕业院校",
+      "eventData": {
+        "detail": {
+          "x": 205,
+          "y": 1020
+        }
+      },
+      "targetCandidates": [
+        "/view/form/view[15]/view[2]/input"
+      ],
+      "timeStamp": 25643,
+      "waitfor": 1,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[15]/view[2]/input",
+      "value": "9",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[15]/view[2]/input"
+      ],
+      "timeStamp": 25746,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 797,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 26166,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 497,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 27182,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 197,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 28048,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 0,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 28532,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchstart",
+      "target": "view.weui-uploader__input",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 164.5,
+            "clientY": 248.75,
+            "force": 1,
+            "pageX": 164.5,
+            "pageY": 248.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 532,
+            "screenY": 481
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 164.5,
+            "clientY": 248.75,
+            "force": 1,
+            "pageX": 164.5,
+            "pageY": 248.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 532,
+            "screenY": 481
+          }
+        ]
+      },
+      "targetCandidates": [
+        "view.weui-uploader__input",
+        ".weui-uploader__input",
+        "/view/form/view[2]/view/view/view/view/view[2]/view"
+      ],
+      "timeStamp": 29083,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "touchend",
+      "target": "view.weui-uploader__input",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {},
+        "changedTouches": [
+          {
+            "clientX": 164,
+            "clientY": 248,
+            "pageX": 164,
+            "pageY": 248,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 532,
+            "screenY": 480
+          }
+        ],
+        "touches": []
+      },
+      "targetCandidates": [
+        "view.weui-uploader__input",
+        ".weui-uploader__input",
+        "/view/form/view[2]/view/view/view/view/view[2]/view"
+      ],
+      "timeStamp": 29181,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "view",
+      "command": "tap",
+      "target": "view.weui-uploader__input",
+      "value": null,
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {
+          "x": 164,
+          "y": 248
+        },
+        "changedTouches": [
+          {
+            "clientX": 164.5,
+            "clientY": 248.75,
+            "force": 1,
+            "pageX": 164.5,
+            "pageY": 248.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 532,
+            "screenY": 481
+          }
+        ],
+        "touches": [
+          {
+            "clientX": 164.5,
+            "clientY": 248.75,
+            "force": 1,
+            "pageX": 164.5,
+            "pageY": 248.75,
+            "radiusX": 11.5,
+            "radiusY": 11.5,
+            "screenX": 532,
+            "screenY": 481
+          }
+        ]
+      },
+      "targetCandidates": [
+        "view.weui-uploader__input",
+        ".weui-uploader__input",
+        "/view/form/view[2]/view/view/view/view/view[2]/view"
+      ],
+      "timeStamp": 29183,
+      "waitfor": 2,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "layer": "appservice",
+      "command": "mock",
+      "rule": {
+        "ruleId": "956d2dac-1a01-40be-9205-6d49fcc2fe9c",
+        "ruleName": "chooseImage1",
+        "apiName": "chooseImage",
+        "enable": true,
+        "verifyFail": false,
+        "isOneTime": true,
+        "filterList": [],
+        "returnConfig": {
+          "returnType": "succ",
+          "generateType": "manual",
+          "manual": {
+            "succ": {
+              "resStr": "{\"errMsg\":\"chooseImage:ok\",\"tempFilePaths\":[\"http://tmp/UyqjsGOCyeBW6d6f32b5ea3caff7032221b326c84073.png\"],\"tempFiles\":[{\"path\":\"http://tmp/UyqjsGOCyeBW6d6f32b5ea3caff7032221b326c84073.png\",\"size\":29919}]}"
+            },
+            "fail": {
+              "resStr": ""
+            }
+          }
+        },
+        "originArgs": [
+          {
+            "count": 1,
+            "sizeType": [
+              "compressed"
+            ],
+            "sourceType": [
+              "album",
+              "camera"
+            ]
+          }
+        ],
+        "mediaFiles": {
+          "http://tmp/UyqjsGOCyeBW6d6f32b5ea3caff7032221b326c84073.png": "UyqjsGOCyeBW6d6f32b5ea3caff7032221b326c84073.png"
+        }
+      }
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 800,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 31465,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 1200,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 31782,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 900,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 32265,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchstart",
+      "target": "/view/form/view[16]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入所学专业",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[16]/view[2]/input"
+      ],
+      "timeStamp": 32590,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchend",
+      "target": "/view/form/view[16]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入所学专业",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[16]/view[2]/input"
+      ],
+      "timeStamp": 32601,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "tap",
+      "target": "/view/form/view[16]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "请输入所学专业",
+      "eventData": {
+        "detail": {
+          "x": 196.5,
+          "y": 1084.75
+        }
+      },
+      "targetCandidates": [
+        "/view/form/view[16]/view[2]/input"
+      ],
+      "timeStamp": 32606,
+      "waitfor": 5,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[16]/view[2]/input",
+      "value": "1",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[16]/view[2]/input"
+      ],
+      "timeStamp": 33222,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[17]/view[2]/input",
+      "value": "0",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[17]/view[2]/input"
+      ],
+      "timeStamp": 33385,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchstart",
+      "target": "/view/form/view[16]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[16]/view[2]/input"
+      ],
+      "timeStamp": 35122,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "touchend",
+      "target": "/view/form/view[16]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {}
+      },
+      "targetCandidates": [
+        "/view/form/view[16]/view[2]/input"
+      ],
+      "timeStamp": 35196,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "tap",
+      "target": "/view/form/view[16]/view[2]/input",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {
+        "detail": {
+          "x": 197.5,
+          "y": 1093.75
+        }
+      },
+      "targetCandidates": [
+        "/view/form/view[16]/view[2]/input"
+      ],
+      "timeStamp": 35197,
+      "waitfor": 1,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[16]/view[2]/input",
+      "value": "10",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[16]/view[2]/input"
+      ],
+      "timeStamp": 36059,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[17]/view[2]/input",
+      "value": "11",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[17]/view[2]/input"
+      ],
+      "timeStamp": 37207,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[18]/view[2]/input",
+      "value": "12",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[18]/view[2]/input"
+      ],
+      "timeStamp": 38687,
+      "waitfor": 80,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[19]/view[2]/input",
+      "value": "13",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[19]/view[2]/input"
+      ],
+      "timeStamp": 39955,
+      "waitfor": 40,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[20]/view[2]/input",
+      "value": "14",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[20]/view[2]/input"
+      ],
+      "timeStamp": 41316,
+      "waitfor": 40,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 917.78125,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 41749,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[21]/view[2]/input",
+      "value": "15",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[21]/view[2]/input"
+      ],
+      "timeStamp": 42065,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 1191.484375,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 42683,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[22]/view[2]/input",
+      "value": "16",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[22]/view[2]/input"
+      ],
+      "timeStamp": 44812,
+      "waitfor": 60,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[23]/view[2]/input",
+      "value": "17",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[23]/view[2]/input"
+      ],
+      "timeStamp": 45397,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 1444.484375,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 45629,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[26]/view[2]/input",
+      "value": "18",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[26]/view[2]/input"
+      ],
+      "timeStamp": 46674,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "textarea",
+      "command": "input",
+      "target": "/view/form/view[27]/view[2]/textarea",
+      "value": "19",
+      "childName": "textarea",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "19",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[27]/view[2]/textarea"
+      ],
+      "timeStamp": 47370,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 1466.78125,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 47602,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[28]/view[2]/input",
+      "value": "20",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[28]/view[2]/input"
+      ],
+      "timeStamp": 47999,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 1740.484375,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 48205,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[29]/view[2]/input",
+      "value": "21",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[29]/view[2]/input"
+      ],
+      "timeStamp": 48614,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[30]/view[2]/input",
+      "value": "22",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[30]/view[2]/input"
+      ],
+      "timeStamp": 49150,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[31]/view[2]/input",
+      "value": "23",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[31]/view[2]/input"
+      ],
+      "timeStamp": 49708,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[32]/view[2]/input",
+      "value": "24",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[32]/view[2]/input"
+      ],
+      "timeStamp": 50267,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 2018.484375,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 50504,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[33]/view[2]/input",
+      "value": "25",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[33]/view[2]/input"
+      ],
+      "timeStamp": 50758,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 2035.28125,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 51066,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[36]/view[2]/input",
+      "value": "26",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[36]/view[2]/input"
+      ],
+      "timeStamp": 51826,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 2333.984375,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 52160,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[37]/view[2]/input",
+      "value": "27",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[37]/view[2]/input"
+      ],
+      "timeStamp": 52546,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[38]/view[2]/input",
+      "value": "28",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[38]/view[2]/input"
+      ],
+      "timeStamp": 53267,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[39]/view[2]/input",
+      "value": "29",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[39]/view[2]/input"
+      ],
+      "timeStamp": 54491,
+      "waitfor": 40,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 2579.984375,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 54720,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[40]/view[2]/input",
+      "value": "30",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[40]/view[2]/input"
+      ],
+      "timeStamp": 55165,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[41]/view[2]/input",
+      "value": "31",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[41]/view[2]/input"
+      ],
+      "timeStamp": 55663,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[42]/view[2]/input",
+      "value": "32",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[42]/view[2]/input"
+      ],
+      "timeStamp": 56639,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 2825.984375,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 56971,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[43]/view[2]/input",
+      "value": "33",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[43]/view[2]/input"
+      ],
+      "timeStamp": 57268,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[44]/view[2]/input",
+      "value": "34",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[44]/view[2]/input"
+      ],
+      "timeStamp": 58445,
+      "waitfor": 40,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[45]/view[2]/input",
+      "value": "35",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[45]/view[2]/input"
+      ],
+      "timeStamp": 59388,
+      "waitfor": 40,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 3071.984375,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 59649,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[46]/view[2]/input",
+      "value": "36",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[46]/view[2]/input"
+      ],
+      "timeStamp": 60876,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[47]/view[2]/input",
+      "value": "37",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[47]/view[2]/input"
+      ],
+      "timeStamp": 62338,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[48]/view[2]/input",
+      "value": "38",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[48]/view[2]/input"
+      ],
+      "timeStamp": 63152,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 3317.984375,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 63616,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[49]/view[2]/input",
+      "value": "39",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[49]/view[2]/input"
+      ],
+      "timeStamp": 64081,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[50]/view[2]/input",
+      "value": "40",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[50]/view[2]/input"
+      ],
+      "timeStamp": 64544,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[51]/view[2]/input",
+      "value": "41",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[51]/view[2]/input"
+      ],
+      "timeStamp": 65255,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 3563.984375,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 65588,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[52]/view[2]/input",
+      "value": "42",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[52]/view[2]/input"
+      ],
+      "timeStamp": 65975,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[53]/view[2]/input",
+      "value": "43",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[53]/view[2]/input"
+      ],
+      "timeStamp": 66991,
+      "waitfor": 40,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 3829.484375,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 67229,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[54]/view[3]/view[2]/input",
+      "value": "44",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[54]/view[3]/view[2]/input"
+      ],
+      "timeStamp": 67550,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[54]/view[4]/view[2]/input",
+      "value": "45",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[54]/view[4]/view[2]/input"
+      ],
+      "timeStamp": 68433,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[54]/view[5]/view[2]/input",
+      "value": "46",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[54]/view[5]/view[2]/input"
+      ],
+      "timeStamp": 69247,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 4139.484375,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 69480,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[55]/view[3]/view[2]/input",
+      "value": "47",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[55]/view[3]/view[2]/input"
+      ],
+      "timeStamp": 70340,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[55]/view[4]/view[2]/input",
+      "value": "48",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[55]/view[4]/view[2]/input"
+      ],
+      "timeStamp": 70851,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "input",
+      "command": "input",
+      "target": "/view/form/view[55]/view[5]/view[2]/input",
+      "value": "49",
+      "childName": "input",
+      "path": "pages/archiveNew/archiveNew",
+      "text": "",
+      "eventData": {},
+      "targetCandidates": [
+        "/view/form/view[55]/view[5]/view[2]/input"
+      ],
+      "timeStamp": 71318,
+      "waitfor": 20,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "tagName": "",
+      "command": "scroll",
+      "target": "/",
+      "path": "pages/archiveNew/archiveNew",
+      "eventData": {
+        "scrollDetail": {
+          "scrollTop": 4511.984375,
+          "scrollLeft": 0
+        }
+      },
+      "targetCandidates": [],
+      "timeStamp": 71592,
+      "waitfor": 10,
+      "desc": "",
+      "commandType": "operate",
+      "layer": "pageframe"
+    },
+    {
+      "timeStamp": 73309,
+      "waitfor": 10,
+      "desc": "",
+      "layer": "tool",
+      "commandType": "operate",
+      "command": "stopRecord"
+    }
+  ]
+}

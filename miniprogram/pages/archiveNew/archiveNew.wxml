@@ -9,9 +9,9 @@
       <view class="weui-uploader">
         <view class="weui-uploader__hd">
           <view class="weui-uploader__bd">
-          <image class="weui-uploader__file" src="{{form.imgUrl}}" mode="aspectFit"></image>
+          <image class="weui-uploader__file" src="{{localPath}}" mode="aspectFit"></image>
         </view>
-          <view class="weui-uploader__input-box" bindtap='uploadHeadImg'>
+          <view class="weui-uploader__input-box" bindtap='SelectHeadImg'>
             <view class="weui-uploader__input"></view>
           </view>
         </view>

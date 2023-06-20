@@ -174,12 +174,69 @@ Page({
     console.log('checkbox发生change事件，携带value值为：', e.detail.value);
     // 在这里添加你的代码，比如改变数据或者显示提示等
   },
-    
+  uploadSign:function(){
+    return new Promise((resolve, reject) => {
+    wx.showLoading({
+      title: '正在上传签名...',
+    });
+    // 上传文件到云存储
+    let that = this;
+    wx.cloud.uploadFile({
+    cloudPath: 'archive/sign/' + new Date().getTime() + '.png', // 这里请按你的需求自定义路径和文件名
+    filePath: that.data.src,
+    success: res => {
+      that.setData({
+        'form.signature': res.fileID
+      })
+      resolve();
+    },
+    fail: err => {
+      wx.showToast({
+        icon: 'none',
+        title: '上传失败',
+      })
+      console.error('[上传签名] 失败：', err);
+      reject(err);
+    }
+    })
+    })
+  },
+  uploadImg:function(){
+    let that = this;
+    return new Promise((resolve, reject) => {
+  wx.showLoading({
+    title: '正在上传头像...',
+  });
+ // 生成一个随机的文件路径
+ const cloudPath = 'headImg/' + Date.now() + '-' + Math.floor(Math.random(0, 1) * 1000) + that.data.localPath.match(/\.[^.]+?$/)[0]
+ wx.cloud.uploadFile({
+  cloudPath, //文件存储的路径
+  filePath: that.data.localPath, // 文件路径
+  success: res => {
+      that.setData({
+          'form.imgUrl': res.fileID
+      })
+    resolve();
+  },
+  fail: err => {
+      wx.showToast({
+          icon: 'none',
+          title: '上传失败',
+      })
+      console.error('[上传头像] 失败：', err)
+      reject(err);
+  }
+})
+
+})
+  },
     
     
     // 提交
-    submitForm: function() {
+    submitForm: async function() {
       let self = this;
+      try {
+        await Promise.all([this.uploadImg(), this.uploadSign()]);
       console.log(this.data.form);
       wx.getUserInfo({
         success: function(userInfoRes) {
@@ -201,6 +258,10 @@ Page({
                   icon: 'success',
                   duration: 2000
                 });
+                self.setData({
+                  form: {}
+                });
+                
               } else {
                 console.log(cloudRes.result.statusCode);
                 wx.showToast({
@@ -220,6 +281,9 @@ Page({
           });
         }
       });
+    }catch(err){
+      console.error('[上传表格] 失败：', err)
+    }
   },
   
 
@@ -267,41 +331,12 @@ Page({
         console.log("签字无法读取，请重新签字")
       }else{
         var context1 = that.data.context1;
-        wx.showLoading({
-          title: '正在上传签名...',
-        });
-        context1.draw(true, wx.canvasToTempFilePath({
+         context1.draw(true, wx.canvasToTempFilePath({
           canvasId: 'handWriting1',
           success(res) {
             console.log(res.tempFilePath) //得到了图片下面自己写上传吧
             that.setData({
               src: res.tempFilePath
-            })
-    
-            // 上传文件到云存储
-            wx.cloud.uploadFile({
-              cloudPath: 'archive/sign/' + new Date().getTime() + '.png', // 这里请按你的需求自定义路径和文件名
-              filePath: that.data.src,
-              success: res => {
-                console.log('[上传文件] 成功：', res)
-        
-                wx.showToast({
-                  title: '上传成功',
-                  icon: 'success'
-                })
-        
-                that.setData({
-                  'form.signature': res.fileID
-                })
-
-              },
-              fail: err => {
-                wx.showToast({
-                  icon: 'none',
-                  title: '上传失败',
-                })
-                console.error('[上传文件] 失败：', err)
-              }
             })
           }
         }))
@@ -309,40 +344,18 @@ Page({
     },
 
 //上传头图
-    uploadHeadImg: function() {
+    SelectHeadImg: function() {
+      console.log("upload");
       var that = this
       wx.chooseImage({
           count: 1,
           sizeType: ['compressed'],
           sourceType: ['album', 'camera'],
           success(res) {
-              const tempFilePaths = res.tempFilePaths[0]
-  
-              // 生成一个随机的文件路径
-              const cloudPath = 'headImg/' + Date.now() + '-' + Math.floor(Math.random(0, 1) * 1000) + tempFilePaths.match(/\.[^.]+?$/)[0]
-              wx.cloud.uploadFile({
-                  cloudPath, //文件存储的路径
-                  filePath: tempFilePaths, // 文件路径
-                  success: res => {
-                      console.log('[上传文件] 成功：', res)
-  
-                      wx.showToast({
-                          title: '上传成功',
-                          icon: 'success'
-                      })
-  
-                      that.setData({
-                          'form.imgUrl': res.fileID
-                      })
-                  },
-                  fail: err => {
-                      wx.showToast({
-                          icon: 'none',
-                          title: '上传失败',
-                      })
-                      console.error('[上传文件] 失败：', err)
-                  }
-              })
+            const tempFilePaths = res.tempFilePaths[0]
+             that.setData({
+               localPath: tempFilePaths
+              }); 
           },
           fail: err => {
               wx.showToast({
