@@ -33,7 +33,10 @@ Page({
     });
     // Fetch employee details with _id...
     this.fetchEmployeeDetails(id);
-
+    // Confirm Role
+    this.setData({
+      role: getApp().globalData.role
+    });
     // 原属archiveNew代码
     var context1 = wx.createCanvasContext('handWriting1');
     context1.setStrokeStyle("#000000")
@@ -42,7 +45,14 @@ Page({
       context1: context1,
     })
   },
-
+  // 管理员点击修改
+  onEditTap: function() {
+    if(this.data.role=="admin" || role=="viceadmin"){
+      this.setData({
+        disabled: false,
+      });
+    }
+  },
   // Fetch employee details with _id
   fetchEmployeeDetails: function(id) {
     wx.showLoading({

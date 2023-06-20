@@ -1,4 +1,5 @@
 <!-- archiveNew.wxml -->
+
 <view class="container">
   <form bindsubmit="submitForm">
     <view wx:if="{{!disabled}}" class="weui-cells__title">上传头像</view>
@@ -17,6 +18,12 @@
 
       </view>
     </view>
+  </view>
+</view>
+
+<view class="page">
+  <view class="weui-btn-area">
+    <button class="weui-btn weui-btn_primary" bindtap="onEditTap">修改</button>
   </view>
 </view>
 
@@ -931,19 +938,6 @@
   <view class="weui-cell">
     <view class="weui-cell__bd">
       <textarea disabled="{{disabled}}" class="weui-textarea" placeholder="" rows="3" name="selfEvaluation" data-field="selfEvaluation" bindinput="handleInputChange">{{form.selfEvaluation}}</textarea>
-    </view>
-  </view>
-</view>
-
-<view class="weui-cells__title">承诺声明</view>
-<view class="weui-cells_checkbox">
-  <view class="weui-cell weui-check__item">
-    <view class="weui-cell__bd">
-      <view class="weui-cell__hd">
-      </view>
-      <view class="weui-cell__bd">
-        <p>本人承诺对以上内容的真实性负责，并愿意接受公司对表中内容进行调查，并且本人保证，没有犯罪，吸毒等不良历史记录，如有隐瞒或造假愿接受招聘方的任何处理。</p>
-      </view>
     </view>
   </view>
 </view>
