@@ -7,7 +7,6 @@ Page({
   onLoad: function() {
     this.showModal();
     console.log( getApp().globalData.role);
-    this.fetchUsers();
 
   },
  // 当用户输入时，更新搜索关键词
@@ -53,6 +52,7 @@ onSearchTap: function() {
     this.setData({
       modalName: null
     })
+    this.fetchUsers();
   },
   onShow: function(){
     console.log( getApp().globalData.role);
