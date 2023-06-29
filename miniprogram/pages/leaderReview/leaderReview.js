@@ -28,6 +28,7 @@ dateToString: function (timestamp) {
   const date = new Date(timestamp);
   return date.toLocaleDateString();
 },
+
 // Add interview review
 addSecondReview() {
   const id = this.data.form._id;
@@ -47,7 +48,22 @@ addThirdReview() {
     url: `/pages/interviewReviewNew/interviewReviewNew?id=${id}&type=${type}`,
   });
 },
-
+  // 查看入职离职评价
+  viewOnboardReview: function (event) {
+    // Navigate to review page with _id as a parameter
+    let formStr=JSON.stringify(this.data.form.leaderReview.onboardReview);
+    wx.navigateTo({
+      url: '/pages/onoffboardView/onoffboardView?formStr='+formStr+'&type=0',
+    })
+  },
+  // 查看入职离职评价
+  viewOffboardReview: function (event) {
+    // Navigate to review page with _id as a parameter
+    let formStr=JSON.stringify(this.data.form.leaderReview.offboardReview);
+    wx.navigateTo({
+      url: '/pages/onoffboardView/onoffboardView?formStr='+formStr+'&type=1',
+    })
+  },
 // Fetch Leader Review details
 fetchLeaderReviewDetails: function() {
 

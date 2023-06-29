@@ -203,10 +203,9 @@ submitForm: function() {
         title: '正在提交...',
       });
       wx.cloud.callFunction({
-        name:'addArchive',
+        name:'editArchive',
         data: {
-          ...self.data.form,
-          openid: userInfoRes.userInfo.openid
+          form:self.data.form
         },
         
         success: function(cloudRes) {
@@ -225,7 +224,7 @@ submitForm: function() {
               duration: 2000
             });
           }
-        },
+        }, 
         fail: function(error) {
           wx.showToast({
             title: '网络错误',

@@ -1,0 +1,229 @@
+<!--pages/onoffboardNew/onoffboardNew.wxml-->
+<view class="page">
+  <view class="weui-cells__title">应聘部门</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <input class="weui-input" type="text" value = "{{department}}" placeholder="请输入应聘部门" bindinput="inputChange" data-field="department"/>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells__title">应聘职位</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <input class="weui-input" type="text" value = "{{position}}" placeholder="请输入应聘职位" bindinput="inputChange" data-field="position"/>
+      </view>
+    </view>
+  </view>
+
+  <!-- 其他表单项... -->
+
+  <view class="weui-cells__title">个人特点部分</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cells__title">1. 仪表和姿态符合工作要求的条件</view>
+    <radio-group class="radio-group" bindchange="radioChange" data-field="Instrument">
+      <label>
+        <radio value="A" checked="{{Instrument == 'A'}}"/> 优秀
+      </label>
+      <label>
+        <radio value="B" checked="{{Instrument == 'B'}}"/> 良好
+      </label>
+      <label>
+        <radio value="C" checked="{{Instrument == 'C'}}"/> 普通
+      </label>
+      <label>
+        <radio value="D" checked="{{Instrument == 'D'}}"/> 略差
+      </label>
+      <label>
+        <radio value="E" checked="{{Instrument == 'E'}}"/> 极差
+      </label>
+    </radio-group>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cells__title">2.自我表现能力（表情、语言、自信）</view>
+    <radio-group class="radio-group" bindchange="radioChange" data-field="selfExpression">
+      <label>
+        <radio value="A" checked="{{selfExpression == 'A'}}"/> 优秀
+      </label>
+      <label>
+        <radio value="B" checked="{{selfExpression == 'B'}}"/> 良好
+      </label>
+      <label>
+        <radio value="C" checked="{{selfExpression == 'C'}}"/> 普通
+      </label>
+      <label>
+        <radio value="D" checked="{{selfExpression == 'D'}}"/> 略差
+      </label>
+      <label>
+        <radio value="E" checked="{{selfExpression == 'E'}}"/> 极差
+      </label>
+    </radio-group>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cells__title">3. 气质（性格类型）是否符合岗位要求</view>
+    <radio-group class="radio-group" bindchange="radioChange" data-field="personality">
+      <label>
+        <radio value="A" checked="{{personality == 'A'}}"/> 优秀
+      </label>
+      <label>
+        <radio value="B" checked="{{personality == 'B'}}"/> 良好
+      </label>
+      <label>
+        <radio value="C" checked="{{personality == 'C'}}"/> 普通
+      </label>
+      <label>
+        <radio value="D" checked="{{personality == 'D'}}"/> 略差
+      </label>
+      <label>
+        <radio value="E" checked="{{personality == 'E'}}"/> 极差
+      </label>
+    </radio-group>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cells__title">4. 口头表达能力</view>
+    <radio-group class="radio-group" bindchange="radioChange" data-field="oralExpression">
+      <label>
+        <radio value="A" checked="{{oralExpression == 'A'}}"/> 优秀
+      </label>
+      <label>
+        <radio value="B" checked="{{oralExpression == 'B'}}"/> 良好
+      </label>
+      <label>
+        <radio value="C" checked="{{oralExpression == 'C'}}"/> 普通
+      </label>
+      <label>
+        <radio value="D" checked="{{oralExpression == 'D'}}"/> 略差
+      </label>
+      <label>
+        <radio value="E" checked="{{oralExpression == 'E'}}"/> 极差
+      </label>
+    </radio-group>
+  </view>
+  <view class="weui-cells__title">工作特征部分</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cells__title">1. 工作热情与事业心</view>
+    <radio-group class="radio-group" bindchange="radioChange" data-field="workPerformance">
+      <label>
+        <radio value="A" checked="{{workPerformance == 'A'}}"/> 优秀
+      </label>
+      <label>
+        <radio value="B" checked="{{workPerformance == 'B'}}"/> 良好
+      </label>
+      <label>
+        <radio value="C" checked="{{workPerformance == 'C'}}"/> 普通
+      </label>
+      <label>
+        <radio value="D" checked="{{workPerformance == 'D'}}"/> 略差
+      </label>
+      <label>
+        <radio value="E" checked="{{workPerformance == 'E'}}"/> 极差
+      </label>
+    </radio-group>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cells__title">2. 教育程度是否符合岗位要求</view>
+    <radio-group class="radio-group" bindchange="radioChange" data-field="educational">
+      <label>
+        <radio value="A" checked="{{educational == 'A'}}"/> 优秀
+      </label>
+      <label>
+        <radio value="B" checked="{{educational == 'B'}}"/> 良好
+      </label>
+      <label>
+        <radio value="C" checked="{{educational == 'C'}}"/> 普通
+      </label>
+      <label>
+        <radio value="D" checked="{{educational == 'D'}}"/> 略差
+      </label>
+      <label>
+        <radio value="E" checked="{{educational == 'E'}}"/> 极差
+      </label>
+    </radio-group>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cells__title">3. 专业特长是否符合岗位要求</view>
+    <radio-group class="radio-group" bindchange="radioChange" data-field="professional">
+      <label>
+        <radio value="A" checked="{{professional == 'A'}}"/> 优秀
+      </label>
+      <label>
+        <radio value="B" checked="{{professional == 'B'}}"/> 良好
+      </label>
+      <label>
+        <radio value="C" checked="{{professional == 'C'}}"/> 普通
+      </label>
+      <label>
+        <radio value="D" checked="{{professional == 'D'}}"/> 略差
+      </label>
+      <label>
+        <radio value="E" checked="{{professional == 'E'}}"/> 极差
+      </label>
+    </radio-group>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cells__title">4. 工作经历是否符合岗位要求</view>
+    <radio-group class="radio-group" bindchange="radioChange" data-field="workExperience">
+      <label>
+        <radio value="A" checked="{{workExperience == 'A'}}"/> 优秀
+      </label>
+      <label>
+        <radio value="B" checked="{{workExperience == 'B'}}"/> 良好
+      </label>
+      <label>
+        <radio value="C" checked="{{workExperience == 'C'}}"/> 普通
+      </label>
+      <label>
+        <radio value="D" checked="{{workExperience == 'D'}}"/> 略差
+      </label>
+      <label>
+        <radio value="E" checked="{{workExperience == 'E'}}"/> 极差
+      </label>
+    </radio-group>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cells__title">5. 是否有足够精力担当此项工作</view>
+    <radio-group class="radio-group" bindchange="radioChange" data-field="energy">
+      <label>
+        <radio value="A" checked="{{energy == 'A'}}"/> 优秀
+      </label>
+      <label>
+        <radio value="B" checked="{{energy == 'B'}}"/> 良好
+      </label>
+      <label>
+        <radio value="C" checked="{{energy == 'C'}}"/> 普通
+      </label>
+      <label>
+        <radio value="D" checked="{{energy == 'D'}}"/> 略差
+      </label>
+      <label>
+        <radio value="E" checked="{{energy == 'E'}}"/> 极差
+      </label>
+    </radio-group>
+  </view>
+
+  <view class="weui-cells__title">薪资待遇：</view>
+  <view class="weui-cell">
+        <view class="weui-cell__bd">
+            <view>基本工资2000元/月+绩效工资</view>
+            <input class="weui-input" type="text"  value="{{performanceSalary}}" placeholder="请输入绩效工资" bindinput="inputChange" data-field="performanceSalary"/>
+            <view>元/月，绩效工资随工作情况调整。</view>
+            <view>因有</view>
+            <input class="weui-input"value="{{certificate}}"  type="text" placeholder="请输入证书名称" bindinput="inputChange" data-field="certificate"/>
+            <view>证书，给予证书补助</view>
+            <input value="{{subsidy}}" class="weui-input" type="text" placeholder="请输入补助费用" bindinput="inputChange" data-field="subsidy"/>
+            <view>（证书补助费用随市场价格调整）。</view>
+</view>
+  </view>
+<view class="weui-cells__title">其他情况：</view>
+<view class="weui-cells">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+            <textarea value="{{other}}" class="weui-textarea" placeholder="请输入其他情况" rows="3" bindinput="inputChange" data-field="other"></textarea>
+        </view>
+    </view>
+</view>
+
+</view>
+

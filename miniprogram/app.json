@@ -7,7 +7,8 @@
     "pages/archiveOverview/archiveOverview",
     "pages/leaderReview/leaderReview",
     "pages/onoffboardNew/onoffboardNew",
-    "pages/interviewReviewNew/interviewReviewNew"
+    "pages/interviewReviewNew/interviewReviewNew",
+    "pages/onoffboardView/onoffboardView"
   ],
   "useExtendedLib": {
     "kbone": true,
