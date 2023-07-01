@@ -37,6 +37,7 @@ Page({
     this.setData({
       role: getApp().globalData.role
     });
+    console.log(this.data.role);
     // 原属archiveNew代码
     var context1 = wx.createCanvasContext('handWriting1');
     context1.setStrokeStyle("#000000")
@@ -47,7 +48,7 @@ Page({
   },
   // 管理员点击修改
   onEditTap: function() {
-    if(this.data.role=="admin" || role=="viceadmin"){
+    if(this.data.role=="admin" || this.data.role=="viceadmin"){
       this.setData({
         disabled: false,
       });
