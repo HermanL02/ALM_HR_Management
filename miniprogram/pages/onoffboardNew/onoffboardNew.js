@@ -13,7 +13,8 @@ Page({
       const type = options.type;
       //设置openid，来填写面试人
       this.setData({
-        openid: getApp().globalData.openid
+        openid: getApp().globalData.openid,
+        type: options.type
       });
       //获取日期，来填写其他
       let that = this;
@@ -61,7 +62,6 @@ Page({
   },
   // 提交
   submit() {
-    
     console.log(this.data);
     // 处理提交逻辑...
     wx.cloud.callFunction({
@@ -72,28 +72,35 @@ Page({
         form: this.data.form
       },
     })
-    .then(res => {
-      
-      console.log(res.result)  // 输出云函数返回结果
-    })
-    .catch(console.error)  // 打印错误信息
-    console.log( this.data.review);
-    wx.cloud.callFunction({
-      name: 'interviewReview',
-      data: {
-        id: this.data.id,
-        type: Number('0'),
-        review: this.data.review
-      },
-    })
-    .then(res => {
-      console.log(res.result)  // 输出云函数返回结果
+      .then(res => {
+        console.log(res.result); // 输出云函数返回结果
+      })
+      .catch(console.error); // 打印错误信息
+    console.log(this.data.review);
+  
+    if (this.data.type !== 1) {
+      wx.cloud
+        .callFunction({
+          name: 'interviewReview',
+          data: {
+            id: this.data.id,
+            type: Number('0'),
+            review: this.data.review
+          }
+        })
+        .then(res => {
+          console.log(res.result); // 输出云函数返回结果
+          wx.navigateBack({
+            delta: 2 // Return one page back
+          });
+        })
+        .catch(console.error); // 打印错误信息
+    } else {
       wx.navigateBack({
-        delta: 2  // Return one page back
+        delta: 2 // Return one page back
       });
-    })
-    .catch(console.error)  // 打印错误信息
-
+    }
   },
+  
 
 });

@@ -202,7 +202,7 @@
       </label>
     </radio-group>
   </view>
-
+  <view wx:if="{{type != '1'}}">
   <view class="weui-cells__title">薪资待遇：</view>
   <view class="weui-cell">
         <view class="weui-cell__bd">
@@ -216,6 +216,7 @@
             <view>（证书补助费用随市场价格调整）。</view>
 </view>
   </view>
+  </view>
 <view class="weui-cells__title">其他情况：</view>
 <view class="weui-cells">
     <view class="weui-cell">
@@ -224,8 +225,8 @@
         </view>
     </view>
 </view>
-
-<view class="weui-cells__title">初试建议：</view>
+<view wx:if="{{type != '1'}}">
+<view class="weui-cells__title" >初试建议：</view>
 <radio-group class="radio-group" bindchange="reviewRadioChange" data-field="recommendation">
     <label>
         <radio value="试用" checked="{{recommendation == '试用'}}"/> 拟予试用
@@ -237,7 +238,7 @@
         <radio value="不录用" checked="{{recommendation == '不录用'}}"/> 不予录用
     </label>
 </radio-group>
-
+</view>
 <view class="weui-cells__title">面试人：</view>
 <view class="weui-cells">
     <view class="weui-cell">
