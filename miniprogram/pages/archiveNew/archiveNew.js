@@ -176,9 +176,6 @@ Page({
   },
   uploadSign:function(){
     return new Promise((resolve, reject) => {
-    wx.showLoading({
-      title: '正在上传签名...',
-    });
     // 上传文件到云存储
     let that = this;
     wx.cloud.uploadFile({
@@ -193,9 +190,10 @@ Page({
     fail: err => {
       wx.showToast({
         icon: 'none',
-        title: '上传失败',
+        title: '上传签名失败，请确认已签名',
       })
       console.error('[上传签名] 失败：', err);
+
       reject(err);
     }
     })
@@ -204,9 +202,13 @@ Page({
   uploadImg:function(){
     let that = this;
     return new Promise((resolve, reject) => {
-  wx.showLoading({
-    title: '正在上传头像...',
-  });
+  if (that.data.localPath === undefined) {
+    wx.showToast({
+        icon: 'none',
+        title: '上传头像失败，请确认已上传头像',
+    });
+    reject(new Error('localPath is undefined'));
+  }
  // 生成一个随机的文件路径
  const cloudPath = 'headImg/' + Date.now() + '-' + Math.floor(Math.random(0, 1) * 1000) + that.data.localPath.match(/\.[^.]+?$/)[0]
  wx.cloud.uploadFile({
@@ -221,7 +223,7 @@ Page({
   fail: err => {
       wx.showToast({
           icon: 'none',
-          title: '上传失败',
+          title: '上传头像失败，请确认已上传头像',
       })
       console.error('[上传头像] 失败：', err)
       reject(err);
