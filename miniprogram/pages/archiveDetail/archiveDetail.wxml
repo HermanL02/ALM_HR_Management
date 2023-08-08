@@ -942,6 +942,15 @@
   </view>
 </view>
 
+<!-- 在此添加您的签名 -->
+<view class="weui-cells__title">签名</view>
+<view class="weui-cells weui-cells_form">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <image src="{{form.signature}}" mode="aspectFit" style="width: 100%; height: 100px;"></image>
+    </view>
+  </view>
+</view>
 
 <view class="weui-btn-area">
   <button disabled="{{disabled}}"  class="weui-btn weui-btn_primary" formType="submit">确认修改</button>
