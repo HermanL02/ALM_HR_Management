@@ -1,4 +1,5 @@
 # Author: Herman 梁逸群
+# In the agreement with ALM Company, the code will remain my intellectual property and can be open-sourced on GitHub.
 # Purpose: 
 To manage the human resource of Shenyang Ailemeng Group Company
 
